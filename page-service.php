@@ -113,7 +113,7 @@ get_header(); ?>
 <img class="w-100" src="<?php echo $img_url; ?>lp_feature_2.png" alt="京都を中心にどこでもお届けいたします！" srcset="<?php echo $img_url; ?>lp_feature_2.png 1x, <?php echo $img_url; ?>lp_feature_2@2x.png 2x">
 <div class="lp__feature__list__inner-wrap">
 <h3>スイトタクシーが<br>大切お届けします！</h3>
-<p>スイトタクシーが店舗様へ商品を受け取りに向かいます。お預かりした商品を、専用BOX（40cm×24cm）にてお客様のもとへ大切にお届けいたします。<br>※ 容器や梱包は店舗様でお願いいたします。</p>
+<p>スイトタクシーが店舗様へ商品を受け取りに向かいます。お預かりした商品をお客様のもとへ大切にお届けいたします。<br>※ 容器や梱包は店舗様でお願いいたします。</p>
 </div>
 </div>
 <div class="lp__feature__list__inner">
