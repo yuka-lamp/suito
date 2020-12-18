@@ -1,0 +1,72 @@
+.modal {
+  &-content {
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    bottom: -7px;
+    @include media-breakpoint-up(md) {
+      position: relative;
+    }
+    form {
+      margin: 0!important;
+    }
+  }
+  &-header {
+    border: 0;
+    padding: 0 0.5rem 0.5rem;
+    .close {
+      color: $white;
+      text-shadow: none;
+      opacity: 1;
+    }
+  }
+  &-body {
+    background-color: $white;
+    border-radius: 0;
+    &-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      display: block;
+      text-align: center;
+      background: $secondary;
+      border-radius: 10px 10px 0 0;
+      color: $info;
+      margin-bottom: 0;
+      padding: 2rem 0;
+      p {
+        margin: 0;
+      }
+    }
+    &-title {
+      margin: 0;
+      font-size: 1rem!important;
+      box-sizing: border-box;
+      margin-bottom: 1em;
+    }
+  }
+  .nav {
+    &-tabs {
+      border: 0;
+      .nav-link {
+        border: 0;
+        font-size: $font-size-sm;
+        color: $body-color;
+        font-weight: bold;
+        &.active {
+          background-color: $light;
+        }
+      }
+    }
+  }
+  .tab-content {
+    background-color: $light;
+    padding: 1rem;
+  }
+}
+
+.banner {
+  img {
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+}

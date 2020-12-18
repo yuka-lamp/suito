@@ -1,0 +1,84 @@
+main {
+  margin-top: 61px;
+}
+
+body {
+  font-family: "Lato", "Noto Sans JP", sans-serif;
+  letter-spacing: 1px;
+  background-color: $white;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+.h3,
+h3 {
+  font-size: 15px !important;
+  @include media-breakpoint-up(md) {
+    font-size: 1.1rem !important;
+  }
+}
+
+.shadow-sm {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.sec {
+  position: relative;
+  padding: 3rem 0;
+
+  &-border {
+    border-bottom: solid 0.5rem $secondary;
+  }
+}
+
+.ttl {
+  &-h2 {
+    position: relative;
+    text-align: center;
+    font-size: 1.375rem;
+    font-weight: bold;
+    color: $info;
+    margin: 1.5rem auto;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $warning;
+
+    @include media-breakpoint-up(md) {
+      font-size: 1.4rem;
+      margin: 1.5rem auto 2em;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: calc(50% - 25px);
+      bottom: -1px;
+      width: 50px;
+      height: 2px;
+      background: $primary;
+    }
+  }
+}
+
+.sp-mode {
+  @include media-breakpoint-up(md) {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+}
+
+.page-link {
+  line-height: 1;
+}
+
+input[type="submit"],
+input[type="button"] {
+  -webkit-appearance: none!important;
+}

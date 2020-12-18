@@ -1,0 +1,159 @@
+.mv {
+  position: relative;
+  overflow: hidden;
+  background: $white;
+
+  .container {
+    padding: 0;
+    position: relative;
+    z-index: 1;
+    @include media-breakpoint-up(md) {
+      max-width: 980px;
+    }
+  }
+
+  &__bg {
+    background: url("../images/mv_bg_sp.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 343px;
+    margin-bottom: 1rem;
+    @include media-breakpoint-up(md) {
+      background: url("../images/mv_bg_pc.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      min-height: 347px;
+    }
+  }
+
+  &__inner {
+    padding: 2rem 0 0 0;
+    @include media-breakpoint-up(md) {
+      padding: 3rem 0;
+    }
+  }
+
+  &__img-wrap {
+    img {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__search {
+    width: 100%;
+    padding: 1rem 15px 2rem;
+    @include media-breakpoint-up(md) {
+      width: 80%;
+      margin: 1rem auto 2rem;
+      padding: 0;
+    }
+  }
+
+  &-geo {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    color: $body-color;
+    padding: 1rem;
+    border-bottom: solid 2px $light;
+    font-size: $font-size-sm;
+    @include media-breakpoint-up(md) {
+      display: none;
+      width: 50%;
+      border-radius: 0.25rem;
+      margin: 3rem auto 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      right: 1rem;
+      transform: translateY(-50%);
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f105";
+    }
+
+    & > span {
+      font-weight: bold;
+      font-size: $font-size-base;
+      margin-right: 3px;
+    }
+  }
+
+  &__tenpo {
+    text-align: center;
+    margin: 2rem 0 0;
+
+    &-wrap {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      box-sizing: border-box;
+      border-radius: 10rem;
+      background-color: $white;
+      padding: 0.25rem 2rem;
+
+      &::after {
+        position: absolute;
+        bottom: -0.6rem;
+        left: 50%;
+        content: "";
+        width: 0.7rem;
+        height: 0.7rem;
+        background-color: $white;
+        transform: rotate(45deg) translateX(-50%);
+      }
+    }
+
+    &-num {
+      font-size: 110%;
+    }
+
+    &-txt {
+      font-size: $font-size-sm;
+    }
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  .mv {
+    background-image: url("../images/bg_mv@2x.png");
+    @include media-breakpoint-up(md) {
+      background-image: url("../images/bg_mv_pc@2x.png");
+    }
+  }
+}
+
+.input-group-text {
+  background-color: $white;
+  color: $info;
+}
+
+.input-group-prepend {
+  & + .form-control {
+    border-left: 0;
+  }
+}
+
+.form-control {
+  height: calc(1.5em + 1.3rem + 2px)!important;
+  border-radius: 5px 0 0 5px;
+  border: none;
+
+  &::placeholder {
+    color: #cccccc;
+  }
+
+  &:-ms-input-placeholder {
+    color: #cccccc;
+  }
+
+  &::-ms-input-placeholder {
+    color: #cccccc;
+  }
+}

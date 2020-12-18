@@ -1,0 +1,170 @@
+.post {
+  &-header {
+    margin-bottom: 2rem;
+  }
+  &-thumbnail {
+    overflow: hidden;
+    font-size: 0;
+  }
+  &-ttl {
+    font-weight: bold;
+    font-size: 1.6rem;
+    margin: 0 0 0.5rem;
+  }
+  &-time {
+    display: block;
+    font-size: 12px;
+  }
+  &-main {
+    font-size: $font-size-sm;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    p {
+      & > a {
+        text-decoration: underline;
+        &[target="_blank"] {
+          &::after {
+            content: "\f35d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin: 0 2px;
+            font-size: 90%;
+          }
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+    h2,
+    h3,
+    h4 {
+      font-weight: bold;
+      margin: 2em 0 1em;
+    }
+    h2 {
+      font-size: 1.4rem;
+      box-sizing: border-box;
+      padding: 0.5em;
+      background: $primary;
+      color: $white;
+    }
+    h3 {
+      font-size: 1.2rem;
+      box-sizing: border-box;
+      padding-top: 0.5rem;
+      padding-left: 1rem;
+      padding-bottom: 0.5rem;
+      border-left: solid 5px $primary;
+      border-bottom: solid 2px $white;
+    }
+    h4 {
+      position: relative;
+      font-size: 1rem;
+      padding-left: 1.5em;
+      box-sizing: border-box;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        display: block;
+        margin-top: -0.5rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: $primary;
+      }
+    }
+    table {
+      width: 100%;
+      margin: 1em 0;
+      border-collapse: collapse;
+      th,
+      td {
+        box-sizing: border-box;
+        padding: 1em;
+        border: solid 1px $light;
+      }
+    }
+    ul,
+    ol {
+      margin: 1em 0;
+    }
+    blockquote {
+      background-color: $light;
+      box-sizing: border-box;
+      padding: 1rem;
+      margin: 1rem 0;
+      p {
+        margin: 0;
+      }
+      cite {
+        font-size: 12px;
+        color: rgba($body-color, 0.7);
+      }
+    }
+  }
+}
+
+#toc_container {
+  box-sizing: border-box;
+  padding: 1.5rem;
+  background: #eeeeee;
+  border: 0;
+  min-width: 30%;
+  .toc_list {
+    li {
+      a {
+        font-size: 12px;
+        color: $body-color;
+      }
+    }
+  }
+}
+
+.single {
+  &__shop {
+    max-width: 480px;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border: 3px solid #eeeeee;
+    background-color: $white;
+    border-radius: 0.5rem;
+    &-name {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: $font-size-sm;
+    }
+    .table {
+      margin: 0;
+      tr {
+        th,
+        td {
+          font-size: 12px;
+          font-weight: normal;
+          padding: 0.25em 1em 0.25em 0;
+          white-space: normal;
+          border: 0 !important;
+        }
+        th {
+          white-space: nowrap;
+        }
+      }
+    }
+    &-btn {
+      text-align: center;
+      margin-top: 1rem;
+      a {
+        display: inline-block;
+        line-height: 1;
+        background-color: $primary;
+        color: $white;
+        font-size: $font-size-sm;
+        padding: 0.8em 3em;
+        border-radius: 5px;
+        border-bottom: 3px solid #d27110;
+      }
+    }
+  }
+}
