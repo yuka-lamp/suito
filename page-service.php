@@ -133,7 +133,7 @@ get_header(); ?>
 <div class="txt-c">
 <img src="<?php echo $img_url; ?>lp_price_img.png" alt="初期費用・月額利用料¥0で導入可能！" srcset="<?php echo $img_url; ?>lp_price_img.png 1x, <?php echo $img_url; ?>lp_price_img@2x.png 2x">
 </div>
-<p class="small my-3 text-md-center">※ 宅配は1回のご注文につき＋宅配料550円がお客様に加算されます。（宅配料は原則お客様負担）
+<p class="small my-3 text-md-center">※ 宅配は1回のご注文につき＋宅配料600円がお客様に加算されます。（宅配料は原則お客様負担）
 <br>※オプションをご選択の場合は別途費用がかかります。
 <br>※クレジットカードでの決済の場合手数料3.6%が別途発生します。</p>
 </div>
