@@ -3,7 +3,7 @@
 // cssの除去
 function dp_deregister_styles()
 {
-    if (!is_page(['contact', 'request'])) {
+    if (!is_page(['contact', 'request', 'service'])) {
         wp_dequeue_style('contact-form-7');
     }
     if (!is_single()) {
@@ -16,7 +16,7 @@ add_action('wp_print_styles', 'dp_deregister_styles', 100);
 // jsの除去
 function dp_deregister_scripts()
 {
-    if (!is_page(['contact', 'request'])) {
+    if (!is_page(['contact', 'request', 'service'])) {
         wp_deregister_script('contact-form-7');
     }
     if (!is_single()) {
@@ -28,7 +28,7 @@ add_action('wp_print_scripts', 'dp_deregister_scripts', 100);
 // 標準のjquery消去
 function my_delete_local_jquery()
 {
-    if (!is_admin() && !is_single() && !is_page('request') && !is_page('contact')) {
+    if (!is_admin() && !is_single() && !is_page(['request', 'contact', 'service'])) {
         wp_deregister_script('jquery');
     }
 }
