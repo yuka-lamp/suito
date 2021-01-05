@@ -64,9 +64,9 @@ $taxquery_tag = array(
 $args = array(
 'paged' => $paged,
 'post_type' => 'shop',
+'s' => $s,
 'tax_query' => array(
 'relation' => 'AND',
-$s,
 $taxquery_category,
 $taxquery_tag
 ),
