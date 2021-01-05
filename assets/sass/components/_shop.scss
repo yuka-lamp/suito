@@ -73,10 +73,10 @@
       &-img {
         position: relative;
         width: 40%;
-        height: 140px;
+        height: 160px;
         @include media-breakpoint-up(md) {
           width: 40%;
-          height: 150px;
+          height: 160px;
         }
 
         img {
@@ -85,14 +85,14 @@
           object-fit: cover;
           border-radius: 10px 0 0 10px;
           @include media-breakpoint-up(md) {
-            height: 150px;
+            height: 160px;
           }
         }
       }
 
       &-txt {
         position: relative;
-        width: 64%;
+        width: 70%;
         padding: 1rem;
         @include media-breakpoint-up(md) {
           width: 60%;

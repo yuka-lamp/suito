@@ -14,14 +14,14 @@
 <div class="search-form my-4">
 <h3 class="modal-body-title">ジャンル</h3>
 <select class="border-0" name="shop_category">
-<label><option name="shop_category" value="nochoice" checked="checked">指定なし</label>
+<option value="">すべて</option>
 <?php
 $taxonomy_name = 'shop_category';
 $args = array( 'hide_empty' => 0 );
 $taxonomys = get_terms($taxonomy_name,$args);
 if( !empty( $taxonomys ) && !is_wp_error( $taxonomys ) ):
 foreach($taxonomys as $taxonomy):
-?><option name="shop_category" value="<?php echo $taxonomy->slug; ?>"><?php echo $taxonomy->name; ?>
+?><option value="<?php echo $taxonomy->slug; ?>"><?php echo $taxonomy->name; ?></option>
 <?php endforeach; ?>
 <?php endif;?>
 </select>

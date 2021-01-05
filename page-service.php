@@ -179,17 +179,17 @@ get_header(); ?>
 <div id="toform" class="lp__cta mt-5 footer-ctabtn">
 <div class="lp__cta__box">
 <a class="smooth-scroll lp__cta__box_btn" href="#contact"><img class="mr-2" src="<?php echo $img_url; ?>cta_btn.svg" style="width:18px;
-height:auto" alt="吹き出しアイコン">まずはお問い合わせ</a>
+height:auto" alt="吹き出しアイコン">まずはお申し込み</a>
 </div>
 </div>
 
 <section id="contact" class="lp__form">
 <div class="container">
 <div class="text-center lp__form-top">
-<h2 class="ttl-h2 pt-5"><span class="marks">お問い合わせ</span></h2>
+<h2 class="ttl-h2 pt-5"><span class="marks">お申し込み</span></h2>
 <img src="<?php echo $img_url; ?>contact_txt.png" alt="初期費用0円" srcset="<?php echo $img_url; ?>contact_txt.png 1x, <?php echo $img_url; ?>contact_txt@2x.png 2x">
 <div class="lp-btn">
-<a href="#">いますぐお問い合わせ</a>
+<a href="#">いますぐお申し込み</a>
 </div>
 </div>
 <div><?php the_content(); ?></div>
