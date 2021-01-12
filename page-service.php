@@ -192,7 +192,15 @@ height:auto" alt="吹き出しアイコン">まずはお申し込み</a>
 <a href="#">いますぐお申し込み</a>
 </div>
 </div>
-<div><?php the_content(); ?></div>
+<div>
+<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
+<script>
+  hbspt.forms.create({
+	portalId: "8940987",
+	formId: "0959fa45-d75e-4c97-9dc9-8eeff3a1b9a1"
+});
+</script>
+</div>
 </div>
 </section>
 
