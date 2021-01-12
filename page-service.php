@@ -105,8 +105,8 @@ get_header(); ?>
 <div class="lp__feature__list__inner">
 <img class="w-100" src="<?php echo $img_url; ?>lp_feature_1.png" alt="京都を中心にどこでもお届けいたします！" srcset="<?php echo $img_url; ?>lp_feature_1.png 1x, <?php echo $img_url; ?>lp_feature_1@2x.png 2x">
 <div class="lp__feature__list__inner-wrap">
-<h3>大垣市内及び西濃地区に<br>お届けいたします！</h3>
-<p>テイクアウトやデリバリーに注力されている飲食店の配送をお手伝いするべく、飲食店向けのサービスとして、タクシーで料理の配達を行う「スイトのタク配」を実施し、京都市内を中心に商品をお客様のもとへお届けいたします。</p>
+<h3>大垣市内を中心に<br>お届けいたします！</h3>
+<p>テイクアウトやデリバリーに注力されている飲食店の配送をお手伝いするべく、飲食店向けのサービスとして、タクシーで料理の配達を行う「スイトのタク配」を実施し、大垣市内（上石津除く）を中心に商品をお客様のもとへお届けいたします。</p>
 </div>
 </div>
 <div class="lp__feature__list__inner">
@@ -133,7 +133,7 @@ get_header(); ?>
 <div class="txt-c">
 <img src="<?php echo $img_url; ?>lp_price_img.png" alt="初期費用・月額利用料¥0で導入可能！" srcset="<?php echo $img_url; ?>lp_price_img.png 1x, <?php echo $img_url; ?>lp_price_img@2x.png 2x">
 </div>
-<p class="small my-3 text-md-center">※ 宅配は1回のご注文につき＋宅配料600円がお客様に加算されます。（宅配料は原則お客様負担）
+<p class="small my-3 text-md-center">※ 宅配は1回のご注文につき＋宅配料660円がお客様に加算されます。（宅配料は原則お客様負担）
 <br>※オプションをご選択の場合は別途費用がかかります。
 <br>※クレジットカードでの決済の場合手数料3.6%が別途発生します。</p>
 </div>

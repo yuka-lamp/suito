@@ -14,7 +14,7 @@ get_header(); ?>
 
 <div class="input-group">
 <div class="input-group-prepend">
-<input type="text" class="form-control" name="s" placeholder="お弁当" value="<?php echo get_search_query(); ?>" />
+<input type="text" class="form-control" name="s" placeholder="洋食" value="<?php echo get_search_query(); ?>" />
 </div>
 </div>
 <div class="search__free__form-btn">

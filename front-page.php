@@ -24,7 +24,7 @@ get_header(); ?>
     <input type="hidden" name="post_type" value="shop">
     <div class="input-group">
     <div class="input-group-prepend">
-    <input type="text" class="form-control" name="s" placeholder="お弁当" value="<?php echo get_search_query(); ?>" />
+    <input type="text" class="form-control" name="s" placeholder="洋食" value="<?php echo get_search_query(); ?>" />
     </div>
     </div>
     <div class="search__free__form-btn">
@@ -45,7 +45,7 @@ get_header(); ?>
 </div>
 </div>
 
-<section class="search">
+<!-- <section class="search">
 <div class="search__genre bg-warning">
 <div class="container">
 <div class="search__genre-list">
@@ -153,7 +153,8 @@ get_header(); ?>
 </div>
 </div>
 </div>
-</section>
+</section> -->
+
 <!-- search -->
 <div class="py-md-5 main-left front">
 <div class="container">
