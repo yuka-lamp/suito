@@ -50,6 +50,7 @@ $wp_url = get_template_directory_uri(); ?>
 <li><a href="<?php echo $home; ?>/delivery/">ご利用方法</a></li>
 <li><a href="<?php echo $home; ?>/category/news/">お知らせ一覧</a></li>
 <li><a class="nav-item nav-link" href="<?php echo $home; ?>/service/">【飲食店向け】スイトタク配を始める</a></li>
+<li><a href="<?php echo $home; ?>/disclaimers/">免責事項</a></li>
 </ul>
 </div>
 <div class="bg-secondary">
