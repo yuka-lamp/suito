@@ -45,7 +45,7 @@ $wp_url = get_template_directory_uri(); ?>
 </div>
 
 <footer class="footermt-0 bg-warning">
-<div class="container">
+<div class="container pt-4">
   <div class="footer__tel__inner">
   <p>サービス内容・システムに関する<br class="visible-md visible-lg">お問い合わせはこちらまで</p>
   <a href="tel:075-600-2721">075-600-2721</a>
