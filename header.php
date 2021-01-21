@@ -12,6 +12,14 @@ $wp_url = get_template_directory_uri(); ?>
 <?php endif;?>
 <?php wp_head(); ?>
 <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-EQHEN06CHC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-EQHEN06CHC');
+</script>
 </head>
 
 <?php if (!is_page(['search', 'geo','service']) && !is_single()): ?>

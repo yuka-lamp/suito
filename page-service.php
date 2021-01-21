@@ -188,9 +188,6 @@ height:auto" alt="吹き出しアイコン">まずはお申し込み</a>
 <div class="text-center lp__form-top">
 <h2 class="ttl-h2 pt-5"><span class="marks">お申し込み</span></h2>
 <img src="<?php echo $img_url; ?>contact_txt.png" alt="初期費用0円" srcset="<?php echo $img_url; ?>contact_txt.png 1x, <?php echo $img_url; ?>contact_txt@2x.png 2x">
-<div class="lp-btn">
-<a href="#">いますぐお申し込み</a>
-</div>
 </div>
 <div>
 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
