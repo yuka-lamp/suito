@@ -3,8 +3,6 @@ $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 get_header(); ?>
 
-<?php get_template_part('template-part/modal/search-form'); ?>
-
 <div class="container py-3">
 <div class="search__free">
 
@@ -220,7 +218,7 @@ wp_pagenavi(['query' => $wp_query]);
 
 <!-- sidebar -->
 <div class="col-md-4 d-md-block d-none">
-<?php get_template_part('template-part/parts/search-restaurants') ?>
+<?php get_template_part('template-part/sidebar') ?>
 </div>
 
 </div>

@@ -166,7 +166,7 @@ get_header(); ?>
 
 </div>
 <div class="col-md-4 d-md-block d-none">
-<?php get_template_part('template-part/parts/search-restaurants') ?>
+<?php get_template_part('template-part/sidebar') ?>
 </div>
 </div>
 </div>
