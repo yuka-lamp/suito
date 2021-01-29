@@ -158,10 +158,6 @@ get_header(); ?>
 <!-- restaurant__external -->
 </div>
 
-<div class="mt-4 text-center">
-<a class="btn btn-sm btn-default font-weight-bold bg-white" href="<?php echo $referer; ?>">一覧ページに戻る</a>
-</div>
-
 </section>
 
 </div>
