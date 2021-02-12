@@ -90,12 +90,12 @@
         height: 61px;
         padding: 0;
 
-        span {
+        .navbar-toggler-icon {
           position: relative;
           width: 16px;
           height: 2px;
           background: $primary;
-          margin-top: -8px;
+          margin-top: -4px;
           text-align: center;
 
           &::after,
@@ -116,6 +116,10 @@
             bottom: -6px;
           }
         }
+        .txt {
+          position: relative;
+          bottom: -3px;
+        }
       }
       /* 検索ボタン */
       &.search {
@@ -125,10 +129,10 @@
         padding: 0;
 
         .fa-search:before {
+          display: block;
           font-size: 16px;
           color: $primary;
-          padding-bottom: 2px;
-          display: block;
+          padding-bottom: 4px;
         }
       }
     }

@@ -51,7 +51,7 @@ $wp_url = get_template_directory_uri(); ?>
             aria-expanded="false"
             aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
-          <br>メニュー
+          <br><span class="txt">メニュー</span>
         </button>
         <!-- ▲ メニューボタン -->
       </div>
