@@ -4,201 +4,290 @@ $wp_url = get_template_directory_uri();
 $img_url = get_template_directory_uri().'/dist/images/';
 get_header(); ?>
 
+<!-- ▼ お知らせ -->
+<section class="info">
+  <?php query_posts( array(
+    'post_type' => 'post',
+    'posts_per_page' => 1
+  ));
+  ?>
+
+  <?php if(have_posts()): ?>
+  <?php while(have_posts()):the_post(); ?>
+
+  <!-- ▼ お知らせ内容 -->
+    <a href="<?php echo the_permalink(); ?>" class="info-content d-block">
+      <p class="f-13 py-sm mb-0">
+        <i class="fas fa-info-circle mr-1 f-18"></i>
+        <?php
+        if(mb_strlen($post->post_title, 'UTF-8')>20){
+        	$title= mb_substr($post->post_title, 0, 22, 'UTF-8');
+        	echo $title.'…';
+        }else{
+        	echo $post->post_title;
+        }
+        ?>
+      </p>
+    </a>
+  <!-- ▲ お知らせ内容 -->
+  <!-- ▼ お知らせ背景 -->
+    <div class="info-bg">
+    </div>
+  <!-- ▲ お知らせ背景 -->
+
+  <?php endwhile; else: ?>
+  <?php endif; ?>
+</section>
+<!-- ▲ お知らせ -->
+
+<!-- ▼ MV -->
+<?php if( get_field('mv-bg',435) ): ?>
+<div class="lp__mv" style="background: url('<?php the_field('mv-bg',435); ?>'); background-position: center; background-size: cover;">
+<?php else: // ないとき ?>
 <div class="lp__mv">
-<div class="container">
-<div class="lp__mv-wrap">
-<div class="sp">
-<img src="<?php echo $img_url; ?>lp_mv_txt_sp.png" alt="スイトタクシーが大切にお客様のもとへお届け" srcset="<?php echo $img_url; ?>lp_mv_txt_sp.png 1x, <?php echo $img_url; ?>lp_mv_txt_sp@2x.png 2x">
-<img src="<?php echo $img_url; ?>lp_mv_illust_sp.png" alt="スイトタクシー運転手のイラスト" srcset="<?php echo $img_url; ?>lp_mv_illust_sp.png 1x, <?php echo $img_url; ?>lp_mv_illust_sp@2x.png 2x">
+<?php endif; ?>
+  <p class="lp__mv-ttl f-24 mb-0"><?php echo get_field('service-name',2); ?>をはじめたい方へ</p>
+  <div class="lp__mv-bg"></div>
 </div>
+<!-- ▲ MV -->
 
-<div class="pc row align-items-center">
-<div class="col-5">
-<img class="w-100" src="<?php echo $img_url; ?>lp_mv_txt_pc.png" alt="スイトタクシーが大切にお客様のもとへお届け" srcset="<?php echo $img_url; ?>lp_mv_txt_pc.png 1x, <?php echo $img_url; ?>lp_mv_txt_pc@2x.png 2x">
-</div>
-<div class="col-7">
-<img class="w-100" src="<?php echo $img_url; ?>lp_mv_illust_pc.png" alt="スイトタクシー運転手のイラスト" srcset="<?php echo $img_url; ?>lp_mv_illust_pc.png 1x, <?php echo $img_url; ?>lp_mv_illust_pc@2x.png 2x">
-</div>
-</div>
+<a class="btn btn-primary w-75 my-5" href="#contact" >
+  今すぐお申し込み
+  <i class="fas fa-angle-right ml-2"></i>
+</a>
 
-</div>
-</div>
-<!-- .lp__hero -->
-</div>
-
-<section class="pb-5 lp__takeeats bg-secondary">
+<!-- ▼ テイクイーツについて -->
+<section class="mt-5 mb-3 pb-5 lp__takeeats">
   <div class="container">
+    <h2 class="ttl-h2 mb-4"><?php echo get_field('service-name',2); ?>のシステム</h2>
     <div class="row align-items-center">
+      <!-- ▼ テキストエリア -->
       <div class="lp__takeeats__txt col-md-6">
-        <h2 class="ttl-h2"><img src="<?php echo $img_url; ?>lp_takeeats_ttl.png" alt="料理の写真" srcset="<?php echo $img_url; ?>lp_takeeats_ttl.png 1x, <?php echo $img_url; ?>lp_takeeats_ttl@2x.png 2x">注文は<b class="text-primary">店舗オリジナル</b>の<br>オーダーサイトから</h2>
-        <p>スイトタク配にお申し込みいただきましたら、店舗ごとにオリジナルのオーダーサイトをご用意しております。<br>そのため店舗様はサイト制作からデリバリーまでを初期導入費・月額費０円でご利用いただくことができます。</p>
-        <p>スイトタク配では、TakeEatsのシステムを利用しています。<a href="http://take-eats.jp/" target="_blank">詳しくはこちら</a></p>
+        <h3 class="f-24 font-weight-bold my-4 text-center">
+          ネット注文システムを
+          <br><span class="text-primary">無料</span>で導入！
+        </h3>
+        <p class="f-14">
+          <?php echo get_field('service-name',2); ?>にお申し込みいただいた店舗様には、オリジナルのオーダーサイトをご用意しております。
+          <br>そのため店舗様はサイト制作からデリバリーまでを初期導入費・月額費０円でご利用いただくことができます。
+        </p>
+        <p class="f-12 text-secondary">
+          ※ <?php echo get_field('service-name',2); ?>では、テイクイーツのシステムを利用しています。
+        </p>
+        <a href="http://take-eats.jp/" class="d-block mt-3 f-14" target="_blank">
+          詳しくはこちら
+          <i class="fas fa-external-link-alt ml-1 text-primary"></i>
+        </a>
       </div>
+      <!-- ▲ テキストエリア -->
+      <!-- ▼ 画像エリア -->
       <div class="lp__takeeats__img col-md-6 text-center">
-        <img src="<?php echo $img_url; ?>lp_takeeats_sp.png" alt="オーダーサイト" srcset="<?php echo $img_url; ?>lp_takeeats_sp.png 1x, <?php echo $img_url; ?>lp_takeeats_sp@2x.png 2x">
+        <img src="<?php echo $img_url; ?>lp_takeeats_sp.png" alt="ネット注文システムを無料で導入！" srcset="<?php echo $img_url; ?>lp_takeeats_sp.png 1x, <?php echo $img_url; ?>lp_takeeats_sp@2x.png 2x">
       </div>
+      <!-- ▲ 画像エリア -->
     </div>
   </div>
 </section>
+<!-- ▲ テイクイーツについて -->
 
-<section class="pb-5 bg-light lp__about">
-<div class="container">
-<h2 class="ttl-h2 pt-5 mt-0">宅配はすべて<br>スイトタクシーにおまかせ</h2>
-<div class="lp__about__list">
-<div class="lp__about__list__inner bg-white">
-<div class="lp__about__list__inner-wrap">
-<div class="lp__about__list__inner-img">
-<img src="<?php echo $img_url; ?>about_icon_1.png" alt="京都を中心にどこでもお届けいたします！" srcset="<?php echo $img_url; ?>about_icon_1.png 1x, <?php echo $img_url; ?>about_icon_1@2x.png 2x">
-</div>
-<div class="lp__about__list__inner-txt">
-<p class="user text-white">お客様</p>
-<h3>注文事前決済</h3>
-<p>店舗サイトから注文の受け付けを行います。</p>
-</div>
-</div>
-</div>
-<div class="lp__about__list__inner bg-white">
-<div class="lp__about__list__inner-wrap">
-<div class="lp__about__list__inner-img">
-<img src="<?php echo $img_url; ?>about_icon_2.png" alt="京都を中心にどこでもお届けいたします！" srcset="<?php echo $img_url; ?>about_icon_2.png 1x, <?php echo $img_url; ?>about_icon_2@2x.png 2x">
-</div>
-<div class="lp__about__list__inner-txt">
-<p class="user text-white">あなたの店舗</p>
-<h3>料理を準備</h3>
-<p>注文通知がきたらご注文を確認し料理を準備します。</p>
-</div>
-</div>
-</div>
-<div class="lp__about__list__inner bg-white">
-<div class="lp__about__list__inner-wrap">
-<div class="lp__about__list__inner-img">
-<img src="<?php echo $img_url; ?>about_icon_3.png" alt="京都を中心にどこでもお届けいたします！" srcset="<?php echo $img_url; ?>about_icon_3.png 1x, <?php echo $img_url; ?>about_icon_3@2x.png 2x">
-</div>
-<div class="lp__about__list__inner-txt">
-<p class="user text-white">スイトタクシー</p>
-<h3>商品のお受け取り</h3>
-<p>スイトタクシーがあなたの店舗まで商品を取りに行きます。</p>
-</div>
-</div>
-</div>
-<div class="lp__about__list__inner bg-white">
-<div class="lp__about__list__inner-wrap">
-<div class="lp__about__list__inner-img">
-<img src="<?php echo $img_url; ?>about_icon_4.png" alt="京都を中心にどこでもお届けいたします！" srcset="<?php echo $img_url; ?>about_icon_4.png 1x, <?php echo $img_url; ?>about_icon_4@2x.png 2x">
-</div>
-<div class="lp__about__list__inner-txt">
-<p class="user text-white">スイトタクシー</p>
-<h3>お客様に商品をお渡し</h3>
-<p>スイトタクシーがお客様の元まで商品をお届けします。</p>
-</div>
-</div>
-</div>
-</div>
-<p class="small mt-4">※感染症対策のため商品の積み込みは 飲食店様に行っていただきます。<br>※ 受付前日19時までのご注文に限る</p>
-</div>
+<!-- ▼ 注文受付からお届けまでの流れ -->
+<section class="lp__about pb-5 mb-3">
+  <div class="container">
+  <h2 class="ttl-h2 mb-4">注文受付からお届けまでの流れ</h2>
+    <div class="home__about__wrap d-md-flex flex-wrap justify-content-between">
+      <!-- ▼ 流れ① -->
+      <div class="lp__about__item bg-light">
+        <div class="lp__about__item-text">
+          <h3 class="lp__about__item-ttl f-18 text-center py-4 text-primary font-weight-bold m-0">ネット注文/決済</h3>
+          <p class="f-14 text-center py-4 m-0">お客様が<br><?php echo get_field('service-name',2); ?>から<br>注文/決済を行います。</p>
+        </div>
+      </div>
+      <!-- ▲ 流れ① -->
+      <!-- ▼ 流れ② -->
+      <div class="lp__about__item bg-light">
+        <div class="lp__about__item-text">
+          <h3 class="lp__about__item-ttl f-18 text-center py-4 text-primary font-weight-bold m-0">料理を準備</h3>
+          <p class="f-14 text-center py-4 m-0">電話orメールで<br>注文通知を確認したら<br>料理を準備します。</p>
+        </div>
+      </div>
+      <!-- ▲ 流れ② -->
+      <!-- ▼ 流れ③ -->
+      <div class="lp__about__item bg-light">
+        <div class="lp__about__item-text">
+          <h3 class="lp__about__item-ttl f-18 text-center py-4 text-primary font-weight-bold m-0">料理の受取</h3>
+          <p class="f-13 text-center py-4 m-0">予定の時間に<br><?php echo get_field('taxi-name',2); ?>が<br>あなたのお店に伺います。</p>
+        </div>
+      </div>
+      <!-- ▲ 流れ③ -->
+      <!-- ▼ 流れ④ -->
+      <div class="lp__about__item bg-light">
+        <div class="lp__about__item-text">
+          <h3 class="lp__about__item-ttl f-18 text-center py-4 text-primary font-weight-bold m-0">お届け完了！</h3>
+          <p class="f-13 text-center py-4 m-0"><?php echo get_field('taxi-name',2); ?>が<br>お客様の元まで<br>商品をお届けします。</p>
+        </div>
+      </div>
+      <!-- ▲ 流れ④ -->
+    </div>
+  </div>
 </section>
+<!-- ▲ 注文受付からお届けまでの流れ -->
 
-<section class="lp__feature">
-<div class="container">
-<h2 class="ttl-h2 pt-5"><span>スイトタク配の特長</span></h2>
-<div class="lp__feature__list">
-<div class="lp__feature__list__inner">
-<img class="w-100" src="<?php echo $img_url; ?>lp_feature_1.png" alt="京都を中心にどこでもお届けいたします！" srcset="<?php echo $img_url; ?>lp_feature_1.png 1x, <?php echo $img_url; ?>lp_feature_1@2x.png 2x">
-<div class="lp__feature__list__inner-wrap">
-<h3>大垣市内を中心に<br>お届けいたします！</h3>
-<p>テイクアウトやデリバリーに注力されている飲食店の配送をお手伝いするべく、飲食店向けのサービスとして、タクシーで料理の配達を行う「スイトのタク配」を実施し、大垣市内（上石津除く）を中心に商品をお客様のもとへお届けいたします。</p>
-</div>
-</div>
-<div class="lp__feature__list__inner">
-<img class="w-100" src="<?php echo $img_url; ?>lp_feature_2.png" alt="京都を中心にどこでもお届けいたします！" srcset="<?php echo $img_url; ?>lp_feature_2.png 1x, <?php echo $img_url; ?>lp_feature_2@2x.png 2x">
-<div class="lp__feature__list__inner-wrap">
-<h3>スイトタクシーが<br>大切お届けします！</h3>
-<p>スイトタクシーが店舗様へ商品を受け取りに向かいます。お預かりした商品をお客様のもとへ大切にお届けいたします。<br>※ 容器や梱包は店舗様でお願いいたします。</p>
-</div>
-</div>
-<div class="lp__feature__list__inner">
-<img class="w-100" src="<?php echo $img_url; ?>lp_feature_3.png" alt="京都を中心にどこでもお届けいたします！" srcset="<?php echo $img_url; ?>lp_feature_3.png 1x, <?php echo $img_url; ?>lp_feature_3@2x.png 2x">
-<div class="lp__feature__list__inner-wrap">
-<h3>導入費・月額費は0円！<br>店舗の負担を最小限に</h3>
-<p>初期導入費・月額利用料は全て無料！店舗が負担するのは注文時のサービス手数料のみで、固定費はかかりません。<br>※ オプションをご選択の場合は別途費用</p>
-</div>
-</div>
-</div>
-</div>
+<!-- ▼ タク配の特徴 -->
+<section class="lp__feature pb-5 mb-4">
+  <div class="container">
+    <h2 class="ttl-h2 mb-4"><span><?php echo get_field('service-name',2); ?>の特長</span></h2>
+    <div class="lp__feature__list">
+      <!-- ▼ ポイント① -->
+      <div class="lp__feature__list__inner">
+        <div class="lp__feature__list__inner-wrap">
+          <h3 class="lp__feature_list_inner_ttl f-16 font-weight-bold my-3">
+            <span class="text-primary mr-2">▶</span>
+            <?php the_field('point_1_ttl',435); ?>
+          </h3>
+          <p class="f-14">
+            <?php the_field('point_1_text',435); ?>
+          </p>
+        </div>
+      </div>
+      <!-- ▲ ポイント① -->
+      <!-- ▼ ポイント② -->
+      <div class="lp__feature__list__inner">
+        <div class="lp__feature__list__inner-wrap">
+          <h3 class="lp__feature_list_inner_ttl f-16 font-weight-bold my-3">
+            <span class="text-primary mr-2">▶</span>
+            <?php the_field('point_2_ttl',435); ?>
+          </h3>
+          <p class="f-14">
+            <?php the_field('point_2_text',435); ?>
+          </p>
+        </div>
+      </div>
+      <!-- ▲ ポイント② -->
+      <!-- ▼ ポイント③ -->
+      <div class="lp__feature__list__inner">
+          <div class="lp__feature__list__inner-wrap">
+            <h3 class="lp__feature_list_inner_ttl f-16 font-weight-bold my-3">
+              <span class="text-primary mr-2">▶</span>
+              <?php the_field('point_3_ttl',435); ?>
+            </h3>
+            <p class="f-14">
+              <?php the_field('point_3_text',435); ?>
+            </p>
+        </div>
+      </div>
+      <!-- ▲ ポイント③ -->
+    </div>
+  </div>
 </section>
+<!-- ▲ タク配の特徴 -->
 
-<section class="lp__price mb-5">
-<div class="container">
-<h2 class="ttl-h2 pt-5"><span class="marks">料金について</span></h2>
-<div class="txt-c">
-<img src="<?php echo $img_url; ?>lp_price_img.png" alt="初期費用・月額利用料¥0で導入可能！" srcset="<?php echo $img_url; ?>lp_price_img.png 1x, <?php echo $img_url; ?>lp_price_img@2x.png 2x">
-</div>
-<p class="small my-3 text-md-center">※ 宅配は1回のご注文につき＋宅配料660円がお客様に加算されます。（宅配料は原則お客様負担）
-<br>※オプションをご選択の場合は別途費用がかかります。
-<br>※クレジットカードでの決済の場合手数料3.6%が別途発生します。</p>
-</div>
+<!-- ▼ 料金について -->
+<section class="lp__price pb-5 mb-4">
+  <div class="container">
+    <h2 class="ttl-h2 mb-4"><span class="marks">料金について</span></h2>
+    <div class="lp__price__list d-flex">
+      <div class="lp__price__list-content">
+        <p class="py-2 f-12 bg-primary text-center text-white mb-0 rounded-top">初期費用</p>
+        <p class="py-3 f-32 font-weight-bold text-center border rounded-bottom">¥0</p>
+      </div>
+      <div class="lp__price__list-content">
+        <p class="py-2 f-12 bg-primary text-center text-white mb-0 rounded-top">月額費用</p>
+        <p class="py-3 f-32 font-weight-bold text-center border rounded-bottom">¥0</p>
+      </div>
+      <div class="lp__price__list-content">
+        <p class="py-2 f-12 bg-primary text-center text-white mb-0 rounded-top">サイト制作費</p>
+        <p class="py-3 f-32 font-weight-bold text-center border rounded-bottom">¥0</p>
+      </div>
+      <div class="lp__price__list-content">
+        <p class="py-2 f-12 bg-secondary text-center text-white mb-0 rounded-top">販売手数料</p>
+        <p class="py-3 f-32 font-weight-bold text-center border rounded-bottom">8%</p>
+      </div>
+    </div>
+    <div class="txt-c">
+      <p class="small mb-0 text-md-center">
+        <?php echo get_field('service-name',2); ?>では、株式会社ランプが提供する
+        <span class="font-weight-bold">テイクイーツのシステム</span>を利用しています。
+        <br>システム利用料（テイクイーツ）以外で店舗様にかかる費用はございません。
+      </p>
+    </div>
+  </div>
 </section>
+<!-- ▲ 料金について -->
 
-<section class="lp__flow bg-light">
-<div class="container">
-<h2 class="ttl-h2 pt-5"><span>導入の流れ</span></h2>
-
-<div class="lp__flow__wrap">
-<ol class="lp__flow__list">
-<li class="lp__flow__list__inner">
-<div class="lp__flow__list__inner-step">STEP<span>01</span></div>
-<h3>お申し込み</h3>
-<p>お申込みフォームより必要事項のご入力をお願い致します。TakeEatsカスタマーサポートよりお電話にてご連絡致します。</p>
-</li>
-<!-- lp__flow__list__inner -->
-<li class="lp__flow__list__inner">
-<div class="lp__flow__list__inner-step">STEP<span>02</span></div>
-<h3>アカウント発行</h3>
-<p>お店の専用サイトを作成しアカウントを発行致します。</p>
-</li>
-<!-- lp__flow__list__inner -->
-<li class="lp__flow__list__inner">
-<div class="lp__flow__list__inner-step">STEP<span>03</span></div>
-<h3>メニュー登録</h3>
-<p>販売する商品の登録を行います。<br>(※無料代行サービス実施中)</p>
-</li>
-<!-- lp__flow__list__inner -->
-<li class="lp__flow__list__inner">
-<div class="lp__flow__list__inner-step">STEP<span>04</span></div>
-<h3>ご利用スタート</h3>
-<p>準備が整ったら早速注文の受け付けを行いましょう。</p>
-</li>
-<!-- lp__flow__list__inner -->
-</ol>
-<!-- lp__flow__list -->
-</div>
-</div>
+<!-- ▼ 導入の流れ -->
+<section class="lp__flow pb-5 mb-4">
+  <div class="container">
+  <h2 class="ttl-h2"><span>導入の流れ</span></h2>
+  <p class="f-24 font-weight-bold text-center my-3">
+    \ 最短<span class="f-32 px-1 text-primary">1日</span>でスタート！ /
+  </p>
+  <!-- ▼ 図 -->
+  <div class="lp__flow__figre d-flex justify-content-center p-0">
+    <div class="lp__flow__figre-step col-md-10 p-0">
+      <div class="lp__flow__figre-step-item">
+        <h3 class="f-16 font-weight-bold text-primary">お申し込み</h3>
+        <p class="f-13 mb-0">お申込みフォームよりお申し込みください。<br>担当者よりお電話にてご連絡致します。</p>
+      </div>
+      <!-- ▲ ステップ 1 -->
+      <div class="lp__flow__figre-step-item f-16">
+        <h3 class="f-16 font-weight-bold text-primary">アカウント発行</h3>
+        <p class="f-13 mb-0">お店の専用サイトを作成しアカウントを発行致します。</p>
+      </div>
+      <!-- ▲ ステップ 2 -->
+      <div class="lp__flow__figre-step-item f-16">
+        <h3 class="f-16 font-weight-bold text-primary">メニュー登録</h3>
+        <p class="f-13 mb-0">販売する商品の登録を行います。<br>(※無料代行サービス実施中)</p>
+      </div>
+      <!-- ▲ ステップ 3 -->
+      <div class="lp__flow__figre-step-item f-16">
+        <h3 class="f-16 font-weight-bold text-primary">ご利用スタート</h3>
+        <p class="f-13 mb-0">準備が整ったら<br>早速注文の受け付けを行いましょう！</p>
+      </div>
+      <!-- ▲ ステップ 4 -->
+    </div>
+  </div>
+  <!-- ▲ 図 -->
+  </div>
 </section>
-<!-- flow -->
+<!-- ▲ 導入の流れ -->
 
-<div id="toform" class="lp__cta mt-5 footer-ctabtn">
-<div class="lp__cta__box">
-<a class="smooth-scroll lp__cta__box_btn" href="#contact"><img class="mr-2" src="<?php echo $img_url; ?>cta_btn.svg" style="width:18px;
-height:auto" alt="吹き出しアイコン">まずはお申し込み</a>
-</div>
-</div>
-
-<section id="contact" class="lp__form">
-<div class="container">
-<div class="text-center lp__form-top">
-<h2 class="ttl-h2 pt-5"><span class="marks">お申し込み</span></h2>
-<img src="<?php echo $img_url; ?>contact_txt.png" alt="初期費用0円" srcset="<?php echo $img_url; ?>contact_txt.png 1x, <?php echo $img_url; ?>contact_txt@2x.png 2x">
-</div>
-<div>
-<script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/shell.js"></script>
-<script>
-  hbspt.forms.create({
-	portalId: "8940987",
-	formId: "0959fa45-d75e-4c97-9dc9-8eeff3a1b9a1"
-});
-</script>
-</div>
-</div>
+<!-- ▼ 注意事項 -->
+<section class="lp__form pb-5 mb-4">
+  <div class="container">
+    <h2 class="ttl-h2"><span class="marks">注意事項</span></h2>
+      <!-- ▼ 管理画面入力 -->
+      <div class="post-main">
+        <?php the_field('attention',435); ?>
+      </div>
+      <!-- ▲ 管理画面入力 -->
+  </div>
 </section>
+<!-- ▲ 注意事項 -->
+
+<!-- ▼ お申し込み -->
+<section id="contact" class="lp__form py-5 bg-light">
+  <div class="container">
+    <div class="text-center lp__form-top">
+    <h2 class="ttl-h2"><span class="marks">お申し込み</span></h2>
+      <!-- ▼ 電話番号 -->
+      <div class="text-center mt-3">
+        <p class="f-16 text-primary font-weight-bold mb-1">カスタマーサポートセンター</p>
+        <a class="cta__phone f-32 font-weight-bold" href="tel:0120955901">0120-955-901</a>
+        <p class="f-12 text-muted mb-4">受付時間｜10:00~18:00（土日・祝除く）</p>
+      </div>
+      <!-- ▲ 電話番号 -->
+      <!-- ▼ お問い合せフォーム -->
+      <div class="cta__form bg-white p-3 p-md-4 mt-4">
+        <?php
+        $page_data = get_page_by_path('service');
+        $page = get_post($page_data);
+        $content = $page -> post_content;
+        echo $content; ?>
+      </div>
+    <!-- ▲ お問い合せフォーム -->
+    </div>
+  </div>
+</section>
+<!-- ▲ お申し込み -->
 
 <?php get_footer();

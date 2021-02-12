@@ -1,59 +1,69 @@
+/*===================================================
+ 共通
+====================================================*/
+form {
+  height: 36px;
+  border-radius: 20px;
+}
+
+.form-control {
+  font-size: 1rem;
+  color: #495057;
+  width: 100%;
+  font-size: 14px;
+  border: none;
+}
+
+.input-group-text {
+  background-color: $white;
+  color: $info;
+}
+/*===================================================
+ フリーワード検索窓
+====================================================*/
 .search {
   &__free {
-    z-index: 1;
-    position: relative;
-    overflow: hidden;
+    border-bottom: 1px solid $light;
 
-    &__form {
-      overflow: hidden;
-      display: block;
-      box-sizing: border-box;
+    form {
+      // background: $light!important;
+    }
 
-      .input-group {
-        display: flex;
-        flex-wrap: nowrap;
+    input {
+      background: none!important;
+      margin-left: 40px;
+      width: 100%;
+    }
 
-        &-prepend {
-          margin: 0;
-          width: 100%;
-
-          input {
-            padding: 5px 1rem;
-            background: $warning;
-          }
-        }
+    .input-group {
+      &::before {
+        font-family: "Font Awesome 5 Free";
+        content: '\f002';
+        font-size: 14px;
+        font-weight: 900;
+        color: $success;
+        position: absolute;
+        top: calc(50% - 9px);
+        left: 15px;
       }
 
-      &-btn {
-        width: 20%;
-
-        .btn-primary {
-          width: 100%;
-          min-width: auto;
-          padding: 0.7rem 0!important;
-          border-radius: 0 5px 5px 0;
-          background-color: $info;
-          border: $info;
-          font-weight: normal;
-        }
+      &-prepend {
+        width: 100%;
       }
     }
   }
-
+}
+/*===================================================
+ ジャンル
+====================================================*/
+.search {
   &__genre {
     margin: 0;
     box-sizing: border-box;
+    border-bottom: 1px solid $light;
 
     .container {
       padding: 0;
-    }
-
-    h3 {
-      font-size: $font-size-sm;
-      font-weight: bold;
-      margin: 0;
-      padding: 0.8rem 0;
-      border-bottom: solid 1px $secondary;
     }
 
     &-list {
@@ -76,12 +86,6 @@
         max-width: 1140px;
       }
 
-      img {
-        @include media-breakpoint-up(lg) {
-          width: 95px
-        }
-      }
-
       ul {
         margin: 0;
         padding: 0;
@@ -89,56 +93,42 @@
 
         li {
           display: inline-block;
+          width: 142px;
+          height: 98px;
           vertical-align: middle;
           box-sizing: border-box;
-          max-width: 24vw;
-          margin-right: 1rem;
-          font-size: 0;
+          margin-right: 6px;
+          background-position: center;
+          background-size: cover;
+          overflow: hidden;
+
           :hover {
-            opacity: .5
+            opacity: 0.5;
           }
 
           a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-decoration: none!important;
-          }
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.6);
 
-          img {
-            display: block;
-            margin: 0 auto;
-            transition: .3s;
-          }
-
-          span {
-            display: block;
-            margin: 0.5rem auto 0;
-            font-size: 12px;
-            line-height: 1;
-            text-align: center;
+            p {
+              color: $white;
+              text-align: center;
+            }
           }
         }
       }
     }
   }
-
-  &__filter {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-
-    p {
-      margin: 0 0.2rem 0.2rem 0;
-    }
-
-    button {
-      display: inline-block;
-      margin: 1rem 0;
-      padding: 3px 10px;
-      border-radius: 1rem;
-      white-space: nowrap;
-    }
-  }
-
+}
+/*===================================================
+ フリーワード検索窓
+====================================================*/
+.search {
   &__result {
     &__inner {
       &__wrap {
@@ -148,48 +138,51 @@
     }
   }
 }
+/*===================================================
+ 検索フォーム
+====================================================*/
+select {
+  -webkit-appearance: button;
+  appearance: button;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: checkbox;
+  appearance: checkbox;
+}
 
 .form-control {
   width: 100%!important;
   height: auto!important;
   padding: 0;
+  font-size: 1rem;
 
   .search {
     &-form {
       label {
         width: 100%;
+        display: flex;
+        align-items: center;
       }
 
       input {
         padding: 14px 10px;
         background: $light;
-        border-radius: 5px;
         width: 100%;
+        border-radius: 2rem;
       }
 
       input[type="checkbox"] {
         display: inline;
         width: 25px;
+        margin-right: 10px;
       }
 
       select {
         padding: 14px 10px;
         background: $light;
-        border-radius: 5px;
         width: 100%;
-      }
-
-      .btn-primary {
-        background: #E3556E!important;
-        font-size: 1rem;
-        padding: 1.05rem 2em!important !important;
-        letter-spacing: 0.05rem;
-        border-radius: 10px;
-        color: #fff;
-        border-radius: 5px;
-        position: relative;
-        overflow: hidden;
-        z-index: 1;
+        border-radius: 2rem;
       }
     }
   }

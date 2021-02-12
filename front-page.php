@@ -3,69 +3,108 @@ $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 get_header(); ?>
 
+<!-- ▼ お知らせ -->
+<section class="info">
+  <?php query_posts( array(
+    'post_type' => 'post',
+    'posts_per_page' => 1
+  ));
+  ?>
+
+  <?php if(have_posts()): ?>
+  <?php while(have_posts()):the_post(); ?>
+
+  <!-- ▼ お知らせ内容 -->
+    <a href="<?php echo the_permalink(); ?>" class="info-content d-block">
+      <p class="f-13 py-sm">
+        <i class="fas fa-info-circle mr-1 f-18"></i>
+        <?php
+        if(mb_strlen($post->post_title, 'UTF-8')>20){
+        	$title= mb_substr($post->post_title, 0, 22, 'UTF-8');
+        	echo $title.'…';
+        }else{
+        	echo $post->post_title;
+        }
+        ?>
+      </p>
+    </a>
+  <!-- ▲ お知らせ内容 -->
+  <!-- ▼ お知らせ背景 -->
+    <div class="info-bg">
+    </div>
+  <!-- ▲ お知らせ背景 -->
+
+  <?php endwhile; else: ?>
+  <?php endif; ?>
+</section>
+<!-- ▲ お知らせ -->
+
 <!-- ▼ メインビジュアル -->
 <section id="mv" class="mv">
-  <div class="mv__bg">
-    <div class="container">
-      <div class="mv__inner row justify-content-center align-items-center">
-        <h2 class="mv__img-wrap col-md-5">
-          <img class="d-block d-md-none" src="<?php echo $wp_url; ?>/dist/images/mv_txt_sp.png" alt="ご自宅までスイトタクシーがお届けします" srcset="<?php echo $wp_url; ?>/dist/images/mv_txt_sp.png 1x, <?php echo $wp_url; ?>/dist/images/mv_txt_sp@2x.png 2x">
-          <img class="d-none d-md-block" src="<?php echo $wp_url; ?>/dist/images/mv_txt_pc.png" alt="ご自宅までスイトタクシーがお届けします" srcset="<?php echo $wp_url; ?>/dist/images/mv_txt_pc.png 1x, <?php echo $wp_url; ?>/dist/images/mv_txt_pc@2x.png 2x">
-        </h2>
-        <div class="mv__img-wrap col-md-7">
-          <img class="d-block d-md-none" src="<?php echo $wp_url; ?>/dist/images/mv_photo_sp.png" alt="食事する家族" srcset="<?php echo $wp_url; ?>/dist/images/mv_photo_sp.png 1x, <?php echo $wp_url; ?>/dist/images/mv_photo_sp@2x.png 2x">
-          <img class="d-none d-md-block" src="<?php echo $wp_url; ?>/dist/images/mv_photo_pc.png" alt="食事する家族" srcset="<?php echo $wp_url; ?>/dist/images/mv_photo_pc.png 1x, <?php echo $wp_url; ?>/dist/images/mv_photo_pc@2x.png 2x">
-        </div>
-      </div>
-    </div>
-  </div>
+
+  <?php query_posts( array(
+    'post_type' => 'slide',
+    'posts_per_page' => 3
+  ));
+  ?>
+  <?php if(have_posts()): ?>
+  <?php while(have_posts()):the_post(); ?>
+
+  <!-- ▼ 画像 -->
+  <?php if( get_field('url') != null): ?>
+
+  <a href="<?php echo get_field('url'); ?>" target="_blank" class="">
+  <?php else: // ないとき ?>
+    <a href="<?php echo the_permalink(); ?>" class="">
+  <?php endif; ?>
+  <img class="w-100 br-7 shadow-sm" src="<?php echo get_field('img'); ?>" alt="<?php the_title(); ?>">
+  </a>
+  <!-- ▲ 画像 -->
+
+  <?php endwhile; else: ?>
+  <?php endif; ?>
+
+</section>
+<!-- ▲ メインビジュアル -->
+
+<!-- ▼ 検索窓 -->
+<section class="search__free pt-sm pb-lg">
   <div class="container">
-    <!-- ▼ 検索窓 -->
-    <div class="search__free mv__search">
-      <form class="search__free__form" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
-      <div class="input-group">
+    <div class="input-group">
+      <form class="search__free__form d-flex w-100 shadow-sm" role="search" method="get" action="<?php echo esc_url(home_url('/')); ?>">
         <input type="hidden" name="post_type" value="shop">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <input type="text" class="form-control" name="s" placeholder="洋食" value="<?php echo get_search_query(); ?>" />
-            </div>
-          </div>
-          <div class="search__free__form-btn">
-            <input type="submit" class="btn btn-block btn-primary text-nowrap" value="検索">
+        <div class="input-group">
+          <div class="input-group-prepend">
+          <input type="text" class="form-control" name="s" placeholder="「店舗名」で検索" value="<?php echo get_search_query(); ?>" />
           </div>
         </div>
       </form>
     </div>
-    <!-- ▲ 検索窓 -->
   </div>
 </section>
-<!-- ▲ メインビジュアル -->
-
-<div class="container bg-white pb-3">
-  <div class="d-md-none d-block bg-info">
-    <div class="cta-takeeats-btn m-0 p-0">
-      <a class="btn text-white py-3" href="<?php echo $home; ?>/delivery/">ご利用方法はこちら<i class="ml-3 fas fa-chevron-right"></i></a>
-    </div>
-  </div>
-</div>
+<!-- ▲ 検索窓 -->
 
 <!-- ▼ ジャンル -->
 <?php get_template_part('template-part/genre'); ?>
 <!-- ▲ ジャンル -->
 
-<!-- search -->
-<div class="py-md-5 main-left front">
-<div class="container">
-<div class="row">
-<div class="col-md-8">
-<?php get_template_part('template-part/reco-restaurants'); ?>
-<!-- buzz -->
+<!-- ▼ メインエリア -->
+<div class="py-md-3 main-left front">
+  <div class="container">
+    <div class="row align-items-start">
+      <!-- ▼ 人気のお店 -->
+      <div class="col-md-8">
+        <?php get_template_part('template-part/reco-restaurants'); ?>
+      </div>
+      <!-- ▲ おすすめ店舗 -->
+      <!-- ▼ サイドバー -->
+      <div class="col-md-4 d-md-block d-none">
+        <?php get_template_part('template-part/search-form') ?>
+      </div>
+      <!-- ▲ サイドバー -->
+    </div>
+  </div>
 </div>
-<div class="col-md-4 d-md-block d-none">
-<?php get_template_part('template-part/sidebar') ?>
-</div>
-<!-- sidebar -->
-</div>
-</div>
-</div>
+<!-- ▲ メインエリア -->
+
 <?php get_footer();

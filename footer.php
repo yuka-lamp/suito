@@ -4,120 +4,61 @@ $wp_url = get_template_directory_uri(); ?>
 
 </main>
 
-<?php if (is_page('service')): //サービスページのみ ?>
-
-<!-- ▼ フッター -->
-<footer class="footer mt-0 mb-5">
-  <div class="container pt-5">
-    <!-- ▼ お問い合わせ -->
-    <div class="footer__tel__inner">
-      <p>サービス内容・システムに関する<br class="visible-md visible-lg">お問い合わせはこちらまで</p>
-      <a href="tel:075-600-2721">075-600-2721</a>
-      <p class="small">（株式会社ランプ TakeEatsカスタマーサポート）</p>
-    </div>
-    <!-- ▲ お問い合わせ -->
-    <!-- ▼ ページリンク -->
-    <div class="footer__link__inner">
-      <ul>
-      <li><a href="http://www.seino.co.jp/suito/index.htm" target="_blank">運営会社</a></li>
-      <li><a href="<?php echo $home; ?>/term/">利用規約</a></li>
-      <li><a href="<?php echo $home; ?>/law/">特定商取引に関する方針</a></li>
-      <li><a href="<?php echo $home; ?>/privacy-policy/">プライバシーポリシー</a></li>
-      </ul>
-    </div>
-    <!-- ▲ ページリンク -->
-    <!-- ▼ コピーライト -->
-    <p class="mb-0 pb-5 socket">
-      <a href="<?php echo $home ?>" target="_blank">
-        Copyright © 2020 スイトタク配 All Rights Reserved.
-      </a>
-    </p>
-    <!-- ▲ コピーライト -->
+<!-- ▼ 加盟店募集 -->
+<?php if( get_field('start-bg',2)): ?>
+<div class="start" style="background: url('<?php echo get_field('start-bg',2); ?>'); background-position: center; background-size: cover;">
+<?php else: // ないとき ?>
+<div class="start">
+<?php endif; ?>
+  <div class="">
+    <h2 class="f-18 text-center">
+      <span class="text-body bg-white mr-2">無料</span><?php echo get_field('service-name',2); ?>をはじめませんか？
+    </h2>
+    <a href="<?php echo $home; ?>/service/">今すぐ申し込む</a>
   </div>
-</footer>
-<!-- ▲ フッター -->
-
-<?php else: ?>
+  <!-- ▼ 背景黒 -->
+  <div class="start-bg"></div>
+  <!-- ▲ 背景黒 -->
+</div>
+<!-- ▲ 加盟店募集 -->
 
 <!-- ▼ 加盟店募集 -->
-<div class="cta d-block d-md-none">
-  <div class="cta-takeeats mb-0">
-    <div class="cta-takeeats-wrap">
-      <a href="<?php echo $home ?>/service" target="_blank">
-        <div class="cta-takeeats__img">
-          <img class="cta-takeeats-wrap-bg" src="<?php echo $wp_url; ?>/dist/images/entry_img.png" alt="あなたのお店もデリバリー始めませんか？" srcset="<?php echo $wp_url; ?>/dist/images/entry_img.png 1x, <?php echo $wp_url; ?>/dist/images/entry_img@2x.png 2x">
-        </div>
-      </a>
-    </div>
+<div class="d-flex justify-content-center">
+  <div class="bg-light p-4 text-center w-100">
+    <p class="f-14 mb-1">サービス内容・システムに関する<br>お問い合わせはこちらまで</p>
+    <a class="f-24 font-weight-bold" href="tel:075-600-2721"><i class="fas fa-phone-alt"></i>075-600-2721</a>
+    <p class="f-12 mb-0">テイクイーツカスタマーサポート</p>
   </div>
 </div>
 <!-- ▲ 加盟店募集 -->
 
 <!-- ▼ フッター -->
-<footer class="footermt-0 bg-warning">
-  <!-- ▼ お問い合わせ -->
-  <div class="container pt-4">
-    <div class="footer__tel__inner">
-    <p>サービス内容・システムに関する<br class="visible-md visible-lg">お問い合わせはこちらまで</p>
-    <a href="tel:075-600-2721">075-600-2721</a>
-    <p class="small">（株式会社ランプ TakeEatsカスタマーサポート）</p>
+<footer class="footer mt-0 mb-5">
+  <div class="nav">
+    <!-- ▼ メインリンク -->
+    <div class="navbar-nav main w-100">
+      <a class="nav-item nav-link" href="<?php echo $home; ?>/delivery">ご利用方法</a>
+      <a class="nav-item nav-link" href="<?php echo $home; ?>/news">お知らせ</a>
+      <a class="nav-item nav-link" href="<?php echo $home; ?>/service"><?php echo get_field('service-name',2); ?>を始める</a>
+      <a class="nav-item nav-link f-14 pr-4 mr-0" href="<?php echo $home; ?>/contact">お問い合わせ</a>
     </div>
-  </div>
-  <!-- ▲ お問い合わせ -->
-  <!-- ▼ 上段 -->
-  <div class="container">
-    <ul class="footer-links footer-links-main pt-4 pb-4">
-    <li><a href="<?php echo $home; ?>/delivery/">ご利用方法</a></li>
-    <li><a href="<?php echo $home; ?>/category/news/">お知らせ一覧</a></li>
-    <li><a class="nav-item nav-link" href="<?php echo $home; ?>/service/">【飲食店向け】スイトタク配を始める</a></li>
-    <li><a href="<?php echo $home; ?>/disclaimers/">【飲食店向け】免責事項</a></li>
-    </ul>
-  </div>
-  <!-- ▲ 上段 -->
-  <!-- ▼ 下段 -->
-  <div class="bg-secondary">
-    <div class="container">
-    <ul class="footer-links footer-links-sub pt-5">
-    <li><a href="http://www.seino.co.jp/suito/index.htm" target="_blank">運営会社</a></li>
-    <li><a href="<?php echo $home; ?>/term/">利用規約</a></li>
-    <li><a href="<?php echo $home; ?>/law/">特定商取引に関する方針</a></li>
-    <li><a href="<?php echo $home; ?>/privacy-policy/">プライバシーポリシー</a></li>
-    </ul>
-    <p class="mb-0 pb-5 socket"><a href="<?php echo $home ?>" target="_blank">Copyright © 2020 スイトタク配 All Rights Reserved.</a></p>
+    <!-- ▲ メインリンク -->
+    <!-- ▼ サブリンク -->
+    <div class="navbar-nav sub py-lg">
+      <a class="f-12" href="<?php echo get_field('taxi-url',2); ?>" target="_blank">運営会社</a>
+      <a class="f-12" href="<?php echo $home; ?>/disclaimers">免責事項</a>
+      <a class="f-12" href="<?php echo $home; ?>/term">利用規約</a>
+      <br>
+      <a class="f-12" href="<?php echo $home; ?>/law">特定商取引に関する方針</a>
+      <a class="f-12" href="<?php echo $home; ?>/privacy-policy">プライバシーポリシー</a>
     </div>
+    <!-- ▲ サブリンク -->
+    <small class="text-success f-10 text-center mb-3 d-block w-100"><?php echo get_field('copyright',2); ?></small>
   </div>
-  <!-- ▲ 下段 -->
 </footer>
 <!-- ▲ フッター -->
 
-<?php endif; ?>
-
-
 <?php wp_footer(); ?>
-<!-- 
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-<script>
-  new Swiper(".swiper-container", {
-    slidesPerView: 1,
-    spaceBetween: 0,
-    loop: true,
-    breakpoints: {
-      768: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        spaceBetween: 10,
-      },
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-</script> -->
 
 </body>
 </html>

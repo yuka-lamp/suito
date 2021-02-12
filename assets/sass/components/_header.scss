@@ -1,109 +1,236 @@
-.lp {
-  &__header {
-    z-index: 999;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+/*===================================================
+ ヘッダー
+====================================================*/
+.header {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $white;
+  margin: 0;
+  padding: 0!important !important;
+
+  .navbar {
     background: $white;
+    width: 100%;
     margin: 0;
-    padding: 0!important !important;
+    padding: 0;
+  }
 
-    .navbar {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-
-      &-collapse {
-        background: $white;
-
-        a {
-          font-size: 1rem;
-          font-weight: bold;
-          text-align: center;
-          position: relative;
-          color: #000;
-          padding: 1rem 0;
-
-          &::after {
-            content: "\f105";
-            font-family: "Font Awesome 5 Free";
-            font-weight: 900;
-            display: inline-block;
-            vertical-align: middle;
-            line-height: 1;
-            color: $primary;
-            margin-left: 0.5rem;
-          }
-        }
-      }
+  .nav {
+    position: fixed;
+    top: 61px;
+    left: 0;
+    background: #fff;
+    flex-grow: inherit;
+    @include media-breakpoint-up(lg) {
+      position: inherit;
+      background: rgba(0,0,0,0);
     }
+  }
 
-    &-wrap {
+  &-wrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap!important;
+    height: 61px;
+    margin: 0;
+
+    h1 {
       width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: nowrap!important;
-      height: 61px;
       margin: 0;
-
-      h1 {
-        width: 100%;
-        margin: 0;
-
-        a {
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          flex-wrap: nowrap;
-          margin-left: 1rem;
-
-          img {
-            margin-right: 10px;
-          }
-
-          span {
-            font-size: 0.85rem;
-            font-weight: bold;
-          }
-        }
+      @include media-breakpoint-up(lg) {
+        width: auto;
+        padding-right: 1rem;
       }
 
-      button {
-        width: 61px;
-        height: 61px;
-        min-width: 61px;
-        background: $primary;
-        border-radius: 0;
+      a {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-left: 1rem;
+        text-decoration: none;
 
-        &.search {
-          background: $info!important;
+        &:hover {}
 
-          p {
-            width: 100%;
-            margin: 0;
-            display: block;
-          }
-
-          img {
-            width: 20px;
-            height: 20px;
-            margin-top: 7px;
-            margin-bottom: 3px;
-          }
+        img {
+          margin-right: 5px;
+          width: auto;
+          max-height: 37px;
         }
 
         span {
-          background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+          font-size: 19px;
+          font-weight: bold;
         }
+      }
+    }
+  }
 
-        p {
-          font-size: 10px;
-          margin: 0;
-          color: $white;
-          width: 43px;
-          margin-left: -3px;
+  &-btn {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    /* メニューボタン */
+    &-item {
+      p {
+        font-size: 10px;
+        margin: 0;
+        width: 100%;
+      }
+      /* ハンバーガーメニュー */
+      &.hum {
+        width: 61px;
+        min-width: 61px;
+        height: 61px;
+        padding: 0;
+
+        span {
+          position: relative;
+          width: 16px;
+          height: 2px;
+          background: $primary;
+          margin-top: -8px;
+          text-align: center;
+
+          &::after,
+          &::before {
+            content: '';
+            width: 16px;
+            height: 2px;
+            background: $primary;
+            position: absolute;
+            left: 0;
+          }
+
+          &::after {
+            top: -6px;
+          }
+
+          &::before {
+            bottom: -6px;
+          }
+        }
+      }
+      /* 検索ボタン */
+      &.search {
+        width: 38px;
+        min-width: 38px;
+        height: 61px;
+        padding: 0;
+
+        .fa-search:before {
+          font-size: 16px;
+          color: $primary;
+          padding-bottom: 2px;
+          display: block;
+        }
+      }
+    }
+  }
+
+  .search__free {
+    border: none;
+  }
+
+  .nav .main a {
+    @include media-breakpoint-up(lg) {
+      display: inline-block;
+      margin-right: 25px;
+      padding: 1rem 1.5rem 1rem 0!important !important;
+      border: none;
+    }
+  }
+}
+/*===================================================
+ ナビ (メニュー開 + フッターで使用)
+====================================================*/
+.nav {
+  width: 100%;
+  @include media-breakpoint-up(lg) {
+    width: auto;
+  }
+
+  .main {
+    width: 100%;
+    @include media-breakpoint-up(lg) {
+      width: auto;
+      display: block;
+      text-align: center;
+    }
+
+    a {
+      position: relative;
+      padding: 1rem 0!important !important;
+      font-size: 0.875rem;
+      font-weight: normal;
+      text-align: center;
+      color: $body-color;
+      border-top: 1px solid $light;
+      @include media-breakpoint-up(lg) {
+        display: inline-block;
+        margin-right: 25px;
+        padding: 1rem 30px 1rem 0;
+        border: none;
+      }
+
+      &:last-child() {
+        @include media-breakpoint-up(lg) {
+          margin-right: 0;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: calc(50% - 3.5px);
+        right: 1rem;
+        width: 7px;
+        height: 7px;
+        border-top: 2px solid $success;
+        border-right: 2px solid $success;
+        transform: rotate(45deg);
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .sub {
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height: 140%;
+    @include media-breakpoint-up(lg) {
+      border-top: 1px solid $light;
+    }
+
+    a {
+      position: relative;
+      display: inline;
+      font-weight: normal;
+      padding: 0 1rem;
+      color: $secondary;
+
+      &::after {
+        content: '';
+        width: 1px;
+        height: 10px;
+        background: $secondary;
+        position: absolute;
+        top: calc(50% - 5px);
+        right: 0;
+      }
+
+      &:nth-child(3n) {
+        &::after {
+          display: none;
         }
       }
     }

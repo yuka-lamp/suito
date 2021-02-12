@@ -1,72 +1,59 @@
+/*===================================================
+ モーダル
+====================================================*/
 .modal {
+  // position: relative;
+
   &-content {
-    background-color: transparent;
-    border: 0;
-    position: absolute;
-    bottom: -7px;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    border-radius: 0;
     @include media-breakpoint-up(md) {
       position: relative;
     }
-    form {
-      margin: 0!important;
-    }
   }
-  &-header {
-    border: 0;
-    padding: 0 0.5rem 0.5rem;
-    .close {
-      color: $white;
-      text-shadow: none;
-      opacity: 1;
-    }
-  }
+
   &-body {
-    background-color: $white;
     border-radius: 0;
+    height: 100vh;
+    /*-- タイトル --*/
     &-name {
-      font-size: 1.2rem;
+      position: relative;
       font-weight: bold;
       display: block;
       text-align: center;
-      background: $secondary;
-      border-radius: 10px 10px 0 0;
-      color: $info;
-      margin-bottom: 0;
-      padding: 2rem 0;
-      p {
-        margin: 0;
-      }
-    }
-    &-title {
-      margin: 0;
-      font-size: 1rem!important;
-      box-sizing: border-box;
-      margin-bottom: 1em;
-    }
-  }
-  .nav {
-    &-tabs {
-      border: 0;
-      .nav-link {
-        border: 0;
-        font-size: $font-size-sm;
-        color: $body-color;
-        font-weight: bold;
-        &.active {
-          background-color: $light;
-        }
+      border-bottom: 1px solid $light;
+
+      .close {
+        padding: 29px 0;
+        position: absolute;
+        top: 0;
+        left: 1rem;
       }
     }
   }
-  .tab-content {
-    background-color: $light;
-    padding: 1rem;
+  /*-- 絞り込みボタン --*/
+  .btn {
+    position: fixed;
+    left: calc(50% -165px);
+    bottom: 2rem;
+    max-width: 330px;
+    width: 100%;
+    margin: 0 auto;
+    @include media-breakpoint-up(md) {
+      position: relative;
+      left: auto;
+      bottom: auto;
+      max-width: 200px;
+    }
+  }
+
+  &-dialog-centered {
+    margin: 0;
   }
 }
 
-.banner {
-  img {
-    display: block;
-    margin: 0 auto 1rem auto;
-  }
+.modal.show .modal-dialog {
+  min-width: 100%;
 }

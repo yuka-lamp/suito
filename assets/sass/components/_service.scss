@@ -1,0 +1,208 @@
+/*===================================================
+ サービスページ
+====================================================*/
+.lp {
+  // メインビジュアル
+  &__mv {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    z-index: -2;
+
+    &-ttl {
+      color: $white;
+      z-index: 1;
+    }
+
+    &-bg {
+      position: absolute;
+      opacity: 0.5;
+      background: $body-color;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  }
+  // テイクイーツについて
+  &__takeeats {
+    padding: 0;
+    @include media-breakpoint-up(lg) {
+      padding: 3rem 0;
+    }
+
+    &__txt {
+      width: 90%;
+      margin: 0 auto;
+
+      .lp-ttl2 {
+        padding-top: 0;
+
+        ::before {
+          display: none;
+        }
+      }
+
+      img {
+        display: block;
+        margin: 0 auto 1rem;
+      }
+    }
+
+    &__img {
+      margin-top: 2rem;
+      @include media-breakpoint-up(lg) {
+        margin-top: 0;
+      }
+    }
+  }
+  // 注文受付からお届けまでの流れ
+  &__about {
+    &__item {
+      position: relative;
+      margin-bottom: 1rem;
+      border-radius: 20px;
+      width: 24%;
+      margin-top: 3rem;
+      @include media-breakpoint-down(md) {
+        margin-bottom: 1rem;
+        width: 100%;
+        margin-top: 2.4rem;
+      }
+
+      &:nth-child(2) {
+        &:before {
+          content: "02";
+        }
+      }
+
+      &:nth-child(3) {
+        &:before {
+          content: "03";
+        }
+      }
+
+      &:nth-child(4) {
+        &:before {
+          content: "04";
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+
+      &:before {
+        content: "01";
+        position: absolute;
+        top: -31px;
+        left: calc(50% - 29px);
+        color: $white;
+        background: $primary;
+        border-radius: 50% 50% 0 0;
+        width: 58px;
+        height: 58px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        padding-top: 7px;
+        z-index: -1;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 11px;
+        top: calc(50% - 5.5px);
+        right: -60px;
+        background: $light;
+        z-index: -1;
+        @include media-breakpoint-down(md) {
+          transform: rotate(90deg);
+          top: auto;
+          bottom: -60px;
+          left: 33%;
+        }
+      }
+
+      &-text {
+        padding: 0 1rem;
+      }
+
+      &-ttl {
+        border-bottom: 1px solid #F0EBDD;
+      }
+    }
+  }
+
+  &__feature {
+    &__list {
+      &__inner {
+        border: 4px solid $light;
+        padding: 1rem;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+      }
+
+      &__ttl {}
+    }
+  }
+
+  &__price {
+    &__list {
+      display: flex;
+      justify-content: space-between;
+      &-content {
+        width: 24%;
+      }
+    }
+  }
+
+  &__flow {
+    z-index: 1;
+    position: relative;
+    padding-bottom: 3rem;
+
+    &__figre {
+      width: 80%;
+      margin: 0 auto;
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+
+      &-step {
+        &-item {
+          position: relative;
+          text-align: center;
+          background: $light;
+          border-radius: 10px;
+          padding: 1rem;
+          margin-bottom: 8px;
+
+          &:last-child {
+            &::after {
+              display: none;
+            }
+          }
+
+          &::after {
+            content: "";
+            width: 11px;
+            height: 8px;
+            position: absolute;
+            left: calc(50% - 5.5px);
+            bottom: -10px;
+            background: $primary;
+            opacity: 0.5;
+            z-index: -1;
+          }
+        }
+      }
+    }
+  }
+}

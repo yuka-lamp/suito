@@ -63,8 +63,6 @@
 
 .archives {
   position: relative;
-  margin: 2rem 0 0 0;
-  padding: 1rem;
   background: $white;
   @include media-breakpoint-up(md) {
     width: 80%;
@@ -104,8 +102,8 @@
         height: 10px;
         display: inline-block;
         vertical-align: middle;
-        border-top: 2px solid $info;
-        border-right: 2px solid $info;
+        border-top: 2px solid $success;
+        border-right: 2px solid $success;
       }
     }
     &-thumbnail {
@@ -121,7 +119,7 @@
       }
     }
     &-info {
-      width: 65%;
+      width: 95%;
       overflow: hidden;
       time {
         display: block;

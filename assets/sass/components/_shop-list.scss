@@ -1,0 +1,194 @@
+/*===================================================
+ 条件変更ボタン
+====================================================*/
+.btn-change {
+  width: 132px;
+  background: $body-color!important;
+  margin: 0 auto;
+  padding: 13px 0;
+  border: none;
+  border-radius: 2rem;
+  color: $white;
+  z-index: 98;
+
+  &:hover {
+    color: $white;
+  }
+
+  &-fix {
+    position: fixed;
+    right: 1rem;
+    bottom: 3rem;
+  }
+}
+/*===================================================
+ 店舗一覧
+====================================================*/
+.shop {
+  &-buzz {
+    &__list {
+      position: relative;
+      @include media-breakpoint-up(md) {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+      }
+
+      &-inner {
+        position: relative;
+        width: 100%;
+        background-color: $white;
+        white-space: normal;
+        @include media-breakpoint-up(md) {
+          display: flex!important;
+          justify-content: space-between;
+          box-sizing: border-box;
+        }
+
+        &:hover {
+          text-decoration: none;
+        }
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        &-img {
+          &-none {
+            width: 100%;
+            height: 145px;
+            object-fit: cover;
+
+            img {
+              width: 100%;
+              height: 145px;
+              object-fit: cover;
+            }
+          }
+
+          &-wrap {
+            position: relative;
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+          }
+
+          &-item {
+            position: relative;
+            display: inline-block;
+            width: 155px;
+            height: 145px;
+            margin: 0 5px 0 0;
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+
+            p {
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              padding: 7px 5px;
+              text-align: right;
+              background: linear-gradient(to bottom, rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.75));
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+
+      &-net {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.15rem 0.5rem;
+        background: $primary;
+        font-size: 0.8rem;
+        color: $white;
+        z-index: 1;
+      }
+
+      &-img {
+        position: relative;
+        width: 100%;
+        height: 145px;
+        @include media-breakpoint-up(md) {
+          width: 50%;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &-txt {
+        position: relative;
+        width: 100%;
+        padding: 14px 11px 0;
+        @include media-breakpoint-up(md) {
+          width: 50%;
+        }
+
+        h3 {
+          font-weight: 700;
+          border-bottom: 1px solid $light;
+        }
+
+        p {
+          letter-spacing: 1px;
+        }
+
+        &-tag {
+          color: $secondary;
+          margin-bottom: 6px;
+
+          i {
+            color: $success;
+            margin-right: 5px;
+          }
+        }
+
+        &-time {
+          color: #5D5D5D;
+          margin: 0;
+          padding: 0;
+          line-height: 1.3rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      &-link {
+        position: relative;
+        text-align: right;
+        padding-right: 1.5rem;
+
+        &::after {
+          position: absolute;
+          top: 43%;
+          right: 8px;
+          transform: rotate(45deg);
+          content: "";
+          width: 7px;
+          height: 7px;
+          display: inline-block;
+          vertical-align: middle;
+          border-top: 1px solid $success;
+          border-right: 1px solid $success;
+        }
+      }
+    }
+  }
+}
+// 一覧でのみPCサイズ変更
+
+.restaurant__menu {
+  @include media-breakpoint-up(md) {
+    width: 50%;
+  }
+}
