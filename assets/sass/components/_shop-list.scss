@@ -192,3 +192,60 @@
     width: 50%;
   }
 }
+
+/*===================================================
+ ページネーション
+====================================================*/
+.pagination {
+  clear: both;
+  text-align: center;
+  margin: 2rem auto 3rem;
+  justify-content: center;
+
+  .page-numbers {
+    color: $primary;
+    background-color: $white;
+    border-color: $primary!important;
+    padding: 7px 0;
+    width: 40px;
+    border-radius: 50%;
+    margin: 0 2px;
+    white-space: nowrap;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid $light;
+    transition: 0.3s;
+
+    &:hover {
+      color: #fff;
+      background-color: $primary;
+    }
+
+    &.current {
+      color: $white;
+      border: none;
+      background-color: $primary;
+    }
+
+    &.next {
+      display: inline-table;
+      width: 60px;
+      border: none;
+      margin-left: 1rem;
+      &:hover {
+        color: $primary;
+        background-color: $white;
+      }
+    }
+    &.prev {
+      display: inline-table;
+      width: 60px;
+      border: none;
+      margin-right: 1rem;
+      &:hover {
+        color: $primary;
+        background-color: $white;
+      }
+    }
+  }
+}

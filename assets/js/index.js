@@ -4,17 +4,17 @@ import "../sass/app.scss";
 // JSインポート
 import "bootstrap";
 import "slick-carousel";
-import InfiniteScroll from 'infinite-scroll';
+// import InfiniteScroll from 'infinite-scroll';
 
 $(function(){
   // 無限スクロール
-  if ($('body').hasClass('archives-shop') && $('[name="shop_flag"]').val() == 'true') {
-    let infScroll = new InfiniteScroll('#scroll', {
-      path: '.next',
-      append: '.scroll-content',
-      history: false,
-    });
-  }
+  // if ($('body').hasClass('archives-shop') && $('[name="shop_flag"]').val() == 'true') {
+  //   let infScroll = new InfiniteScroll('#scroll', {
+  //     path: '.next',
+  //     append: '.scroll-content',
+  //     history: false,
+  //   });
+  // }
   // スライドショー
   $("#mv").slick({
     slidesToShow: 1,

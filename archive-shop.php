@@ -129,7 +129,7 @@ get_header(); ?>
       </div>
 
       <!-- ▼ ページネーション -->
-      <div class="pagination d-none">
+      <div class="pagination">
           <?php global $wp_rewrite;
           $paginate_base = get_pagenum_link(1);
           if(strpos($paginate_base, '?') || ! $wp_rewrite->using_permalinks()){
