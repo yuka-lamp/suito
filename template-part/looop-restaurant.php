@@ -4,6 +4,12 @@ $wp_url = get_template_directory_uri();
 $id = $post->ID;
 $text = get_field('time');
 $str = str_replace(array('<br>', '<br />', "\r\n", "\n", "\r", '　'), '', $text);
+
+$img_1 = wp_get_attachment_image_src(get_field('menu_img_1'), 'medium', false);
+$img_2 = wp_get_attachment_image_src(get_field('menu_img_2'), 'medium', false);
+$img_3 = wp_get_attachment_image_src(get_field('menu_img_3'), 'medium', false);
+$img_4 = wp_get_attachment_image_src(get_field('menu_img_4'), 'medium', false);
+$img_5 = wp_get_attachment_image_src(get_field('menu_img_5'), 'medium', false);
 ?>
 
 <a class="shop-buzz__list-inner scroll-content shadow-sm br-7 d-block mb-md" href="<?php the_permalink(); ?>">
@@ -32,7 +38,7 @@ $str = str_replace(array('<br>', '<br />', "\r\n", "\n", "\r", '　'), '', $text
       <!-- ▼ 商品① -->
       <?php if(get_field('menu_img_1',$id)): // 入力がある場合 ?>
       <div class="shop-buzz__list-inner-img-item">
-        <img src="<?php the_field('menu_img_1',$id); ?>" alt="<?php the_title(); ?>の商品">
+        <img src="<?php echo $img_1[0]; ?>" alt="<?php the_title(); ?>の商品">
       </div>
       <?php else: // ないとき ?>
       <?php endif; ?>
@@ -40,7 +46,7 @@ $str = str_replace(array('<br>', '<br />', "\r\n", "\n", "\r", '　'), '', $text
       <!-- ▼ 商品② -->
       <?php if(get_field('menu_img_2',$id)): // 入力がある場合 ?>
       <div class="shop-buzz__list-inner-img-item">
-        <img src="<?php the_field('menu_img_2',$id); ?>" alt="<?php the_title(); ?>の商品">
+        <img src="<?php echo $img_2[0]; ?>" alt="<?php the_title(); ?>の商品">
       </div>
       <?php else: // ないとき ?>
       <?php endif; ?>
@@ -48,7 +54,7 @@ $str = str_replace(array('<br>', '<br />', "\r\n", "\n", "\r", '　'), '', $text
       <!-- ▼ 商品③ -->
       <?php if(get_field('menu_img_3',$id)): // 入力がある場合 ?>
       <div class="shop-buzz__list-inner-img-item">
-        <img src="<?php the_field('menu_img_3',$id); ?>" alt="<?php the_title(); ?>の商品">
+        <img src="<?php echo $img_3[0]; ?>" alt="<?php the_title(); ?>の商品">
       </div>
       <?php else: // ないとき ?>
       <?php endif; ?>
@@ -56,7 +62,7 @@ $str = str_replace(array('<br>', '<br />', "\r\n", "\n", "\r", '　'), '', $text
       <!-- ▼ 商品④ -->
       <?php if(get_field('menu_img_4',$id)): // 入力がある場合 ?>
       <div class="shop-buzz__list-inner-img-item">
-        <img src="<?php the_field('menu_img_4',$id); ?>" alt="<?php the_title(); ?>の商品">
+        <img src="<?php echo $img_4[0]; ?>" alt="<?php the_title(); ?>の商品">
       </div>
       <?php else: // ないとき ?>
       <?php endif; ?>
@@ -64,7 +70,7 @@ $str = str_replace(array('<br>', '<br />', "\r\n", "\n", "\r", '　'), '', $text
       <!-- ▼ 商品⑤ -->
       <?php if(get_field('menu_img_5',$id)): // 入力がある場合 ?>
       <div class="shop-buzz__list-inner-img-item">
-        <img src="<?php the_field('menu_img_5',$id); ?>" alt="<?php the_title(); ?>の商品">
+        <img src="<?php echo $img_5[0]; ?>" alt="<?php the_title(); ?>の商品">
       </div>
         <?php else: // ないとき ?>
         <?php endif; ?>

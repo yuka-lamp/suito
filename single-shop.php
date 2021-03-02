@@ -2,7 +2,15 @@
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 $id = $post->ID;
-get_header(); ?>
+
+$img_1 = wp_get_attachment_image_src(get_field('menu_img_1'), 'medium', false);
+$img_2 = wp_get_attachment_image_src(get_field('menu_img_2'), 'medium', false);
+$img_3 = wp_get_attachment_image_src(get_field('menu_img_3'), 'medium', false);
+$img_4 = wp_get_attachment_image_src(get_field('menu_img_4'), 'medium', false);
+$img_5 = wp_get_attachment_image_src(get_field('menu_img_5'), 'medium', false);
+
+get_header();
+?>
 
 <!-- ▼ 画面下固定ボタン -->
 <div id="restaurant-btn" class="border-top">
@@ -37,40 +45,24 @@ get_header(); ?>
             <?php endif; ?>
           </p>
           <p class="restaurant__wrap-about f-13 py-md pb-lg mb-0"><?php the_field('about'); ?></p>
-          <!-- ▼ PC -予約ボタン -->
-          <div class="d-none d-md-block mb-lg">
-            <?php if( get_field('net') === "はい"): ?>
-              <!-- ▼ ネット注文 -->
-              <?php if(post_custom('order_url')): // 入力がある場合 ?>
-              <a class="btn btn-primary w-100 mt-3" href="<?php the_field('order_url'); ?>" target="_blank" >
-                ネットで今すぐ注文
-                <i class="fas fa-angle-right ml-2"></i>
-              </a>
-              <?php endif; ?>
-              <!-- ▲ ネット注文 -->
-            <?php elseif( get_field('net') === "いいえ"): ?>
-              <!-- ▼ 電話注文 -->
-              <?php if(post_custom('order_tel')): // 入力がある場合 ?>
-              <a class="btn btn-primary w-100 mt-3" href="tel:<?php the_field('order_tel'); ?>" >
-                <?php the_field('order_tel'); ?>
-                <i class="fas fa-angle-right ml-2"></i>
-              </a>
-              <?php endif; ?>
-              <!-- ▲ 電話注文 -->
+          <div class="d-block mb-lg">
+            <?php if(post_custom('order_url')): // 入力がある場合 ?>
+            <a class="btn btn-primary w-100 mt-3" href="<?php the_field('order_url'); ?>" target="_blank" >
+              ネットで今すぐ注文
+              <i class="fas fa-angle-right ml-2"></i>
+            </a>
             <?php endif; ?>
-            <!-- ▲ PC -予約ボタン -->
           </div>
         </div>
         <!-- ▲ 導入文 -->
         <!-- ▼ メニュー -->
-        <?php if( get_field('menu') === "はい"):?>
         <div class="restaurant__menu restaurant-block w-100">
           <h2 class="ttl-h2 py-md m-0 f-16">人気デリバリーメニュー</h2>
-          <a href="<?php the_field('order_url'); ?>" class="shop-buzz__list-inner-img-wrap mb-lg d-block">
+          <a href="<?php the_field('order_url'); ?>" class="shop-buzz__list-inner-img-wrap mb-lg d-block text-decoration-none">
             <!-- ▼ 商品① -->
             <?php if(get_field('menu_img_1',$id)): // 入力がある場合 ?>
             <div class="shop-buzz__list-inner-img-item">
-              <img src="<?php the_field('menu_img_1',$id); ?>" alt="<?php the_title(); ?>の商品">
+              <img src="<?php echo $img_1[0]; ?>" alt="<?php the_title(); ?>の商品">
             </div>
             <?php else: // ないとき ?>
             <?php endif; ?>
@@ -78,7 +70,7 @@ get_header(); ?>
             <!-- ▼ 商品② -->
             <?php if(get_field('menu_img_2',$id)): // 入力がある場合 ?>
             <div class="shop-buzz__list-inner-img-item">
-              <img src="<?php the_field('menu_img_2',$id); ?>" alt="<?php the_title(); ?>の商品">
+              <img src="<?php echo $img_2[0]; ?>" alt="<?php the_title(); ?>の商品">
             </div>
             <?php else: // ないとき ?>
             <?php endif; ?>
@@ -86,7 +78,7 @@ get_header(); ?>
             <!-- ▼ 商品③ -->
             <?php if(get_field('menu_img_3',$id)): // 入力がある場合 ?>
             <div class="shop-buzz__list-inner-img-item">
-              <img src="<?php the_field('menu_img_3',$id); ?>" alt="<?php the_title(); ?>の商品">
+              <img src="<?php echo $img_3[0]; ?>" alt="<?php the_title(); ?>の商品">
             </div>
             <?php else: // ないとき ?>
             <?php endif; ?>
@@ -94,7 +86,7 @@ get_header(); ?>
             <!-- ▼ 商品④ -->
             <?php if(get_field('menu_img_4',$id)): // 入力がある場合 ?>
             <div class="shop-buzz__list-inner-img-item">
-              <img src="<?php the_field('menu_img_4',$id); ?>" alt="<?php the_title(); ?>の商品">
+              <img src="<?php echo $img_4[0]; ?>" alt="<?php the_title(); ?>の商品">
             </div>
             <?php else: // ないとき ?>
             <?php endif; ?>
@@ -102,16 +94,14 @@ get_header(); ?>
             <!-- ▼ 商品⑤ -->
             <?php if(get_field('menu_img_5',$id)): // 入力がある場合 ?>
             <div class="shop-buzz__list-inner-img-item">
-              <img src="<?php the_field('menu_img_5',$id); ?>" alt="<?php the_title(); ?>の商品">
+              <img src="<?php echo $img_5[0]; ?>" alt="<?php the_title(); ?>の商品">
             </div>
               <?php else: // ないとき ?>
               <?php endif; ?>
             <!-- ▲ 商品⑤ -->
           </a>
         </div>
-        <?php elseif( get_field('menu') === "いいえ"): ?>
 
-        <?php endif; ?>
         <!-- ▲ メニュー -->
         <!-- ▼ 店舗情報 -->
         <div class="restaurant__overview restaurant-block">
