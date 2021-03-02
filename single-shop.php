@@ -2,6 +2,7 @@
 $home = esc_url(home_url());
 $wp_url = get_template_directory_uri();
 $id = $post->ID;
+$terms = the_terms($post->ID,'shop_category');
 
 $img_1 = wp_get_attachment_image_src(get_field('menu_img_1'), 'medium', false);
 $img_2 = wp_get_attachment_image_src(get_field('menu_img_2'), 'medium', false);
@@ -39,7 +40,14 @@ get_header();
         <div class="restaurant__wrap mt-lg position-relative">
           <p class="f-18 font-weight-bold mb-1"><?php the_title() ?></p>
           <p class="f-13 text-secondary mb-0">
-            <?php echo get_the_term_list($post->ID,'shop_category'); ?>
+            <!-- ▼ カテゴリ -->
+            <?php if ($terms = get_the_terms($post->ID, 'shop_category')) {
+              foreach ( $terms as $term ) {
+                echo esc_html($term->name);
+                }
+              }
+             ?>
+             <!-- ▲ カテゴリ -->
             <?php if(post_custom('price')): // 入力がある場合 ?>
                <span class="ml-1">¥<?php the_field('price'); ?>から注文可</span>
             <?php endif; ?>
@@ -56,6 +64,7 @@ get_header();
         </div>
         <!-- ▲ 導入文 -->
         <!-- ▼ メニュー -->
+        <?php if(get_field('menu_img_1',$id)): // 入力がある場合 ?>
         <div class="restaurant__menu restaurant-block w-100">
           <h2 class="ttl-h2 py-md m-0 f-16">人気デリバリーメニュー</h2>
           <a href="<?php the_field('order_url'); ?>" class="shop-buzz__list-inner-img-wrap mb-lg d-block text-decoration-none">
@@ -101,6 +110,8 @@ get_header();
             <!-- ▲ 商品⑤ -->
           </a>
         </div>
+        <?php else: // ないとき ?>
+        <?php endif; ?>
 
         <!-- ▲ メニュー -->
         <!-- ▼ 店舗情報 -->

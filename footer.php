@@ -14,7 +14,9 @@ $wp_url = get_template_directory_uri(); ?>
     <h2 class="f-18 text-center">
       <span class="text-body bg-white mr-2">無料</span><?php echo get_field('service-name',2); ?>をはじめませんか？
     </h2>
-    <a href="<?php echo $home; ?>/service/">今すぐ申し込む</a>
+    <div class="">
+      <a href="<?php echo $home; ?>/service/">今すぐ申し込む</a>
+    </div>
   </div>
   <!-- ▼ 背景黒 -->
   <div class="start-bg"></div>
@@ -26,7 +28,7 @@ $wp_url = get_template_directory_uri(); ?>
 <div class="d-flex justify-content-center">
   <div class="bg-light p-4 text-center w-100">
     <p class="f-14 mb-1">サービス内容・システムに関する<br>お問い合わせはこちらまで</p>
-    <a class="f-24 font-weight-bold" href="tel:075-600-2721"><i class="fas fa-phone-alt"></i>075-600-2721</a>
+    <a class="f-24 font-weight-bold" href="tel:0120-955-901"><i class="fas fa-phone-alt"></i>0120-955-901</a>
     <p class="f-12 mb-0">テイクイーツカスタマーサポート</p>
   </div>
 </div>
