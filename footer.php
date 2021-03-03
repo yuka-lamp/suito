@@ -40,7 +40,7 @@ $wp_url = get_template_directory_uri(); ?>
     <!-- ▼ メインリンク -->
     <div class="navbar-nav main w-100">
       <a class="nav-item nav-link" href="<?php echo $home; ?>/delivery">ご利用方法</a>
-      <a class="nav-item nav-link" href="<?php echo $home; ?>/news">お知らせ</a>
+      <!-- <a class="nav-item nav-link" href="<?php echo $home; ?>/news">お知らせ</a> -->
       <a class="nav-item nav-link" href="<?php echo $home; ?>/service"><?php echo get_field('service-name',2); ?>を始める</a>
     </div>
     <!-- ▲ メインリンク -->

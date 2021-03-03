@@ -30,7 +30,7 @@ $wp_url = get_template_directory_uri(); ?>
       <!-- ▼ タク配ロゴ -->
       <h1 class="navbar-brand p-0 m-0">
       <a class="d-inline-block align-middle" href="<?php echo $home; ?>">
-        <img src="<?php echo get_field('service-logo',2); ?>" alt="<?php echo get_field('service-name',2); ?>ロゴ">
+        <img src="<?php echo get_field('service-logo',2); ?>" alt="<?php bloginfo( 'name' ); ?>">
         <span class="f-32 text-body font-weight-bold"></span>
       </a>
       </h1>
@@ -61,7 +61,7 @@ $wp_url = get_template_directory_uri(); ?>
         <!-- ▼ メインリンク -->
         <div class="navbar-nav main">
           <a class="nav-item nav-link f-14 pr-4 mr-0" href="<?php echo $home; ?>/delivery">ご利用方法</a>
-          <a class="nav-item nav-link f-14 pr-4 mr-0" href="<?php echo $home; ?>/news">お知らせ</a>
+          <!-- <a class="nav-item nav-link f-14 pr-4 mr-0" href="<?php echo $home; ?>/news">お知らせ</a> -->
           <a class="nav-item nav-link f-14 pr-4 mr-0" href="<?php echo $home; ?>/service"><?php echo get_field('service-name',2); ?>を始める</a>
         </div>
         <!-- ▲ メインリンク -->
