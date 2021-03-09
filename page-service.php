@@ -272,7 +272,7 @@ get_header(); ?>
       <!-- ▼ 電話番号 -->
       <div class="text-center mt-3">
         <p class="f-16 text-primary font-weight-bold mb-1">カスタマーサポートセンター</p>
-        <a class="cta__phone f-32 font-weight-bold" href="tel:0120955901">0120-955-901</a>
+        <a class="cta__phone f-32 font-weight-bold" href="tel:0120538205">0120-538-205</a>
         <p class="f-12 text-muted mb-4">受付時間｜10:00~18:00（土日・祝除く）</p>
       </div>
       <!-- ▲ 電話番号 -->

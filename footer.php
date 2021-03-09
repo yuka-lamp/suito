@@ -28,7 +28,7 @@ $wp_url = get_template_directory_uri(); ?>
 <div class="d-flex justify-content-center">
   <div class="bg-light p-4 text-center w-100">
     <p class="f-14 mb-1">サービス内容・システムに関する<br>お問い合わせはこちらまで</p>
-    <a class="f-24 font-weight-bold" href="tel:0120-955-901"><i class="fas fa-phone-alt"></i>0120-955-901</a>
+    <a class="f-24 font-weight-bold" href="tel:0120538205"><i class="fas fa-phone-alt"></i>0120-538-205</a>
     <p class="f-12 mb-0">テイクイーツカスタマーサポート</p>
   </div>
 </div>

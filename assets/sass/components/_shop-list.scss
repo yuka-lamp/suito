@@ -192,7 +192,6 @@
     width: 50%;
   }
 }
-
 /*===================================================
  ページネーション
 ====================================================*/
@@ -227,14 +226,20 @@
     border: none;
   }
 
-  span.extend,
   a.first,
   a.last,
   a.nextpostslink,
-  a.previouspostslink {
+  a.previouspostslink,
+  span.extend {
     padding: 0 10px;
     border: none;
     width: auto;
+
+    &:hover {
+      color: $primary;
+      background: none;
+      font-weight: bold;
+    }
   }
 
   span.current {

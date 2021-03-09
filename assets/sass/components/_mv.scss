@@ -53,11 +53,12 @@
 ====================================================*/
 .mv {
   .slick-slide {
-    &>div {
+    & > div {
       overflow: hidden;
       position: relative;
       height: 0;
       padding-top: 56.75%;
+
       a {
         position: absolute;
         display: block;
@@ -65,6 +66,7 @@
         height: 100%;
         top: 0;
         left: 0;
+
         img {
           position: absolute;
           top: 50%;

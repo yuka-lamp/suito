@@ -122,7 +122,7 @@ get_header(); ?>
       <?php while(have_posts()): the_post(); ?>
 
         <!-- ▼ ループするコンテンツ -->
-        <?php get_template_part('template-part/looop-restaurant') ?>
+        <?php get_template_part('template-part/loop-restaurant') ?>
         <!-- ▲ ループするコンテンツ -->
 
       <?php endwhile; ?>

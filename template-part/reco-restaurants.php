@@ -19,7 +19,7 @@ $wp_url = get_template_directory_uri();
       ?>
 
       <!-- ▼ ループするコンテンツ -->
-      <?php get_template_part('template-part/looop-restaurant') ?>
+      <?php get_template_part('template-part/loop-restaurant') ?>
       <!-- ▲ ループするコンテンツ -->
 
       <?php endforeach; ?>

@@ -64,20 +64,8 @@
     h4 {
       position: relative;
       font-size: 1rem!important;
-      padding-left: 1.5em;
+      color: $primary;
       box-sizing: border-box;
-      &::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        display: block;
-        margin-top: -0.5rem;
-        width: 1rem;
-        height: 1rem;
-        border-radius: 50%;
-        background-color: $primary;
-      }
     }
     table {
       width: 100%;

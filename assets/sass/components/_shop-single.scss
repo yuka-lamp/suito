@@ -5,16 +5,29 @@
   position: relative;
 
   &__mv {
-    width: calc(100% + 30px);
-    height: 198px;
-    margin: 0 0 0 -15px;
-    @include media-breakpoint-up(md) {
-      height: 330px;
+    overflow: hidden;
+    position: relative;
+    height: 410px;
+    background: $light;
+    @include media-breakpoint-down(lg) {
+      height: 345px;
+    }
+    @include media-breakpoint-down(md) {
+      height: 257px;
+    }
+    @include media-breakpoint-down(sm) {
+      width: calc(100% + 30px);
+      margin-left: -15px;
+      height: 202px;
     }
 
     img {
-      width: 100%;
-      height: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      max-width: 100%;
+      max-height: 100%;
       object-fit: cover;
     }
   }
