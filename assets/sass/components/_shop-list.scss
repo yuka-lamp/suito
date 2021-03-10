@@ -256,3 +256,14 @@
     display: none;
   }
 }
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .shop-buzz__list-img,
+  .shop-buzz__list-inner-img-item {
+    overflow: hidden;
+    background: $light;
+
+    img {
+      height: auto;
+    }
+  }
+}

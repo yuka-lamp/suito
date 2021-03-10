@@ -100,3 +100,13 @@
     }
   }
 }
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .restaurant__mv {
+    overflow: hidden;
+    background: $light;
+
+    img {
+      height: auto;
+    }
+  }
+}

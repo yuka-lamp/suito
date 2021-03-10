@@ -113,3 +113,13 @@
     transform: scale(1);
   }
 }
+@media (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .mv .slick-slide > div a {
+    overflow: hidden;
+    background: $light;
+
+    img {
+      height: auto;
+    }
+  }
+}
